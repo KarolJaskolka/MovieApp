@@ -1,0 +1,6 @@
+<article>
+    <p class="sectionTitle">Recent Comments</p>
+    <ng-container *ngFor="let elem of comments">
+        <app-user-comment [comment]="elem"></app-user-comment>
+    </ng-container>
+</article>

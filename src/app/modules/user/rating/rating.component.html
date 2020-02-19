@@ -1,0 +1,15 @@
+<section>
+    <figure>
+        <ng-container *ngIf="rating.movie.poster; else default">
+            <img src="{{host}}{{rating.movie.poster}}">
+        </ng-container>
+        <ng-template #default>
+            <img src="{{host}}api/images/movies/default.jpg">
+        </ng-template>
+    </figure>
+    <figcaption>
+        <h5><a [routerLink]="['/movie/', rating.movie.name]">{{ rating.movie.title }}</a></h5>
+        <h6>{{ rating.date | date:'MMM d, y, H:mm' }}</h6>  
+        <p class="stars">{{ rating.stars }}</p>
+    </figcaption>
+</section>

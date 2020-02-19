@@ -1,0 +1,31 @@
+@import '../../../../styles.scss';
+
+section {
+    padding: 1em;
+    border-bottom: 1px solid $textDark;
+    display: flex;
+}
+
+h3, h5, h6 {
+    padding: 0.25em 0em;
+}
+
+h5, h6, a {
+    color: $textGray;
+}
+
+.description {
+    padding: 0.25em 0em;
+    font-size: 14px;
+}
+
+img {
+    width: 90px;
+    height: 135px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+aside {
+    margin: 0px 16px;
+}

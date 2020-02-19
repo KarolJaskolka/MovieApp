@@ -1,0 +1,10 @@
+@import '../../../../styles.scss';
+
+i {
+    font-size: 1.25em;
+}
+
+i:hover{
+    color: $focus;
+    cursor: pointer;
+}

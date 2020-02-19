@@ -1,0 +1,18 @@
+<article>
+    <p class="sectionTitle">User Info</p>
+    <section>
+        <figure>
+            <ng-container *ngIf="user.avatar; else default">
+                <img class="avatar" src="{{host}}{{user.avatar}}">
+            </ng-container>
+            <ng-template #default>
+                <img class="avatar" src="{{host}}api/images/users/default_avatar.png">
+            </ng-template>
+        </figure>
+        <aside>
+            <p class="username"><b>{{ user.login }}</b></p>
+            <p><b>Name:</b> {{ user.firstname }} {{ user.lastname }}</p>
+            <p><b>Birthday:</b> {{ user.birth }} </p>
+        </aside>
+    </section>
+</article>

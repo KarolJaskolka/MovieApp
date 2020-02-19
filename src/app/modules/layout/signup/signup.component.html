@@ -1,0 +1,10 @@
+<form>
+    <input [(ngModel)]="newUser.login" type="text" name="login" placeholder="Login">
+    <input [(ngModel)]="newUser.password" type="password" name="password" placeholder="Password">
+    <input [(ngModel)]="newUser.firstName" type="text" name="firstName" placeholder="First Name">
+    <input [(ngModel)]="newUser.lastName" type="text" name="lastName" placeholder="Last Name">
+    <input [(ngModel)]="newUser.email" type="text" name="email" placeholder="E-Mail">
+    <input [(ngModel)]="newUser.phone" type="text" name="phone" placeholder="Phone">
+    <input [(ngModel)]="newUser.birth" type="text" name="birth" placeholder="Birth">
+    <input (click)="signUp($event)" type="submit" name="btnSubmit" id="btnSubmit" value="Sign Up">
+</form>

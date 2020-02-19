@@ -1,0 +1,28 @@
+@import '../../../../styles.scss';
+
+section {
+    display: flex;
+    padding: 1em;
+}
+
+p {
+    background-color: $mainBackground;
+    color: $textDark;
+    padding: 8px;
+    font-size: 1em;
+    text-align: left;
+}
+
+.username {
+    font-size: 1.25em;
+}
+
+.avatar {
+    height: 150px;
+    width: 150px;
+    margin-right: 1em;
+}
+
+aside {
+    margin: auto 1em;
+}

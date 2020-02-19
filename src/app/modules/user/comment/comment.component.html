@@ -1,0 +1,16 @@
+<section>
+    <figure>
+        <ng-container *ngIf="comment.movie.poster; else default">
+            <img src="{{host}}{{comment.movie.poster}}">
+        </ng-container>
+        <ng-template #default>
+            <img src="{{host}}api/images/movies/default.jpg">
+        </ng-template>
+    </figure>
+    <aside>
+        <h3>{{ comment.title }}</h3>
+        <h6>{{ comment.date | date:'MMM d, y, H:mm' }}</h6>
+        <h5><a [routerLink]="['/movie/', comment.movie.name]">{{ comment.movie.title }}</a></h5>
+        <p class="description">{{ comment.description }}</p>
+    </aside>
+</section>

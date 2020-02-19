@@ -1,0 +1,14 @@
+<section>
+    <div class="form">
+        <div class="buttons">
+            <button (click)="setForm($event, true)" class="active">Log In</button>
+            <button (click)="setForm($event, false)">Sign Up</button>
+        </div>
+        <ng-container *ngIf="login;else register">
+            <app-login></app-login>
+        </ng-container>
+        <ng-template #register>
+            <app-sign-up></app-sign-up>
+        </ng-template>
+    </div>
+</section>

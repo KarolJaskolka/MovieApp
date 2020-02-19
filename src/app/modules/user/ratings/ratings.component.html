@@ -1,0 +1,8 @@
+<article>
+    <p class="sectionTitle">Recent Ratings</p>
+    <div class="ratingsContainer">
+        <ng-container *ngFor="let elem of ratings">
+            <app-user-rating [rating]="elem"></app-user-rating>
+        </ng-container>
+    </div>
+</article>

@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+$main: #30415d;
+$theme: #3e5477;
+$form: #eeeeee;
+$text: #d0d0d0;
+$textHover: #eeeeee;
+$textDark: #222222;
+$textGray: #999494;
+$focus: #b6a232;
+$green: #1b9c3b;
+$red: #c43737;
+$orange: #da7735;
+$searchBackground: #576b8f;
+$mainBackground: #e9e9e9;
+$bodyBackground: #c5bebe;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: $bodyBackground;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.greenBorder {
+    border-color: $green;
+}
+
+.redBorder {
+    border-color: $red;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+.sectionTitle {
+    background-color: $theme;
+    color: $text;
+    padding: 16px;
+    font-size: 24px;
+    text-align: center;
+}

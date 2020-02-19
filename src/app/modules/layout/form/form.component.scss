@@ -1,0 +1,39 @@
+@import '../../../../styles.scss';
+
+section {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.form {
+    grid-column: 2/3;
+    color: $textDark;
+    background-color: $form;
+    -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.75);
+}
+
+.buttons {
+    display: flex;
+}
+
+button {
+    flex: 1;
+    background-color: $form;
+    border-width: 0px 0px 5px 0px;
+    border-color: #dddddd;
+    background-color: #dddddd;
+    outline: 0px;
+    padding: 1em;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.active {
+    border-color: #da7735;
+    background-color: #da7735;
+}

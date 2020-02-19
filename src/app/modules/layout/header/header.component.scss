@@ -1,0 +1,30 @@
+@import '../../../../styles.scss';
+
+header {
+    background-color: $main;
+    padding: 0.75em;
+    font-size: 2em;
+    color: $text;
+    font-family: 'Tomorrow', sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+app-logo {
+    flex: 1;
+}
+
+app-search {
+    flex: 1;
+}
+
+app-account {
+    flex: 1;
+}
+
+@media (max-width: 1000px){
+    app-search {
+        display: none;
+    }
+}

@@ -1,0 +1,30 @@
+@import '../../../../styles.scss';
+
+section {
+    display: inline-block;
+}
+
+input[type=text]{
+    font-size: 20px;
+    background-color: $main;
+    outline: 0px;
+    border-width: 0px 0px 2px 0px;
+    border-color: $text;
+    color: $text;
+    text-align: center;
+}
+
+input[type=text]:focus{
+    border-color: $textHover;
+}
+
+i {
+    margin-left: 5px;
+    display: inline;
+    vertical-align: bottom;
+}
+
+i:hover{
+    color: $textHover;
+    cursor: pointer;
+}
