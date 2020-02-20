@@ -23,8 +23,8 @@ button {
     flex: 1;
     background-color: $form;
     border-width: 0px 0px 5px 0px;
-    border-color: #dddddd;
-    background-color: #dddddd;
+    border-color: $form;
+    background-color: $form;
     outline: 0px;
     padding: 1em;
 }
@@ -36,4 +36,16 @@ button:hover {
 .active {
     border-color: #da7735;
     background-color: #da7735;
+}
+
+
+@media(max-width: 768px){
+
+    section {
+        grid-template-columns: repeat(6,1fr);
+    }
+
+    .form {
+        grid-column: 2/6;
+    }
 }

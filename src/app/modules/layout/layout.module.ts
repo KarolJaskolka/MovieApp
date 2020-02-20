@@ -12,7 +12,7 @@ import { SignUpComponent } from './signup/signup.component';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -29,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     imports: [
         RouterModule,
         CommonModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     exports: [
         HomeComponent,

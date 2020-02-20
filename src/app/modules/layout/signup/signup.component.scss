@@ -7,15 +7,16 @@ form {
 
 input {
     display: block;
-    margin-bottom: 1em;
 }
 
-#matInput {
-    width: 100%;
+input:not(:first-child){
+    margin-top: 1em;
 }
 
 input[type=text], input[type=password]{
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     border-width: 0px 0px 2px 0px;
     border-color: $main;
     padding: 5px;
@@ -27,13 +28,8 @@ input[type=text]:focus, input[type=password]:focus{
     border-color: $focus;
 }
 
-
 input[type=submit]{
-    margin: 0px auto;
-}
-
-input[type=submit]{
-    margin: 10px auto 0px auto;
+    margin: 15px auto 0px auto;
     padding: 0.75em;
     background-color: $orange;
     -webkit-appearance: none;
@@ -41,14 +37,17 @@ input[type=submit]{
     border-radius: 5px;
 }
 
-input[type=submit]:hover{
-    background-color: #c0723e;
+input.ng-invalid.ng-touched {
+    border-color: $red !important;
 }
 
-.mat-form-field-appearance-legacy .mat-form-field-underline {
-    height: 2px;
+input.ng-valid.ng-touched {
+    border-color: $green !important;
 }
 
-.mat-form-field-appearance-legacy .mat-form-field-underline {
-    background-color: $main;
+.registerError {
+    color: $red;
+    font-size: 12px;
+    display: block;
+    margin-top: 10px;
 }

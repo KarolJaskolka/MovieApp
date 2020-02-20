@@ -1,4 +1,4 @@
-export class Log {
+export interface Log {
     token: string;
     userid: string;
     login: string;

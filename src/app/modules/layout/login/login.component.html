@@ -1,6 +1,6 @@
 <form>
-    <input (blur)="validateLogin($event)" [(ngModel)]="login" type="text" name="login" placeholder="Login">
-    <input (blur)="validatePassword($event)" [(ngModel)]="password" type="password" name="password" placeholder="Password">
+    <input (blur)="validateLogin()" [(ngModel)]="login" type="text" name="login" placeholder="Login">
+    <input (blur)="validatePassword()" [(ngModel)]="password" type="password" name="password" placeholder="Password">
     <input (click)="logIn($event)" type="submit" name="btnSubmit" id="btnSubmit" value="Log In">
     <span class="warning" [ngStyle]="{'display': warningStyle}">Wrong login or password</span>
 </form>

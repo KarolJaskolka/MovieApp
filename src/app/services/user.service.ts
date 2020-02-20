@@ -30,7 +30,7 @@ export class UserService {
     }
 
     register(user: User){
-        this.http.post(this.host + 'api/users/', user);
+        return this.http.post<User>(this.host + 'api/users/', user);
     }
 
 }
