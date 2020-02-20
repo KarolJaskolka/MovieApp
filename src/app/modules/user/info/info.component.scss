@@ -26,3 +26,9 @@ p {
 aside {
     margin: auto 1em;
 }
+
+.logout {
+    text-decoration: underline;
+    cursor: pointer;
+    color: $main;
+}

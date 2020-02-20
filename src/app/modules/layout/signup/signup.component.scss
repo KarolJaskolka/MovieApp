@@ -37,6 +37,10 @@ input[type=submit]{
     border-radius: 5px;
 }
 
+form.ng-valid input[type=submit]:hover{
+    background-color: #c0723e;
+}
+
 input.ng-invalid.ng-touched {
     border-color: $red !important;
 }

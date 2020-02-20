@@ -21,9 +21,4 @@ export class AccountComponent {
         }
     }
 
-    logout(){
-        this.storageService.logout();
-        this.router.navigate(['/home']);
-    }
-
 }

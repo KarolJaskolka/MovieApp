@@ -1,27 +1,41 @@
 @import '../../../../styles.scss';
 
 section {
-    display: inline-block;
+    text-align: center;
+    background-color: #242d30;
+    padding: 1.5em;
 }
 
 input[type=text]{
-    font-size: 20px;
-    background-color: $main;
-    outline: 0px;
-    border-width: 0px 0px 2px 0px;
-    border-color: $text;
-    color: $text;
+    background-color: $text;
+    font-size: 18px;
+    padding: 4px 8px;
     text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+}
+
+input[type=text]::placeholder{
+    font-size: 14px;
 }
 
 input[type=text]:focus{
     border-color: $textHover;
 }
 
+.bar {
+    position: relative;
+}
+
 i {
+    position: absolute;
+    line-height: 32px;
+    font-size: 35px;
     margin-left: 5px;
     display: inline;
-    vertical-align: bottom;
+    vertical-align: top;
+    color: $text;
 }
 
 i:hover{

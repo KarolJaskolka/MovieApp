@@ -5,7 +5,7 @@
             <button (click)="setForm($event, false)">Sign Up</button>
         </div>
         <ng-container *ngIf="login;else register">
-            <app-login></app-login>
+            <app-log-in></app-log-in>
         </ng-container>
         <ng-template #register>
             <app-sign-up></app-sign-up>

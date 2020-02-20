@@ -2,25 +2,23 @@
 
 header {
     background-color: $main;
-    padding: 0.75em;
+    padding: 0.75em 2.5em;
     font-size: 2em;
     color: $text;
     font-family: 'Tomorrow', sans-serif;
     display: flex;
     align-items: center;
-    text-align: center;
+    
 }
 
 app-logo {
     flex: 1;
-}
-
-app-search {
-    flex: 1;
+    text-align: left;
 }
 
 app-account {
     flex: 1;
+    text-align: right;
 }
 
 @media (max-width: 1000px){

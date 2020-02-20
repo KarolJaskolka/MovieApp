@@ -1,0 +1,14 @@
+<a [routerLink]="['/movie', movie.name]">
+    <figure>
+        <ng-container *ngIf="movie.poster; else default">
+            <img src="{{host}}{{movie.poster}}">
+        </ng-container>
+        <ng-template #default>
+            <img src="{{host}}api/images/movies/default.jpg">
+        </ng-template>
+        <figcaption>
+            <span class="rating">{{movie.rating}}<i class="material-icons">grade</i></span>
+            <span class="title"><b>{{movie.title}}</b></span>
+        </figcaption>
+    </figure>
+</a>

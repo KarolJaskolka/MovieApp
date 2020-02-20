@@ -1,66 +1,51 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
-    selector: 'app-login',
+    selector: 'app-log-in',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
 
-export class LogInComponent {
+export class LogInComponent implements OnInit {
 
     login: string;
     password: string;
     warningStyle: string = 'none';
+    logInForm: FormGroup;
 
-    constructor(private authService:AuthService, private storageService:StorageService, private router:Router,) {}
+    constructor(private authService:AuthService, private storageService:StorageService, 
+        private router:Router,private formBuilder:FormBuilder) {}
+
+    ngOnInit(): void {
+        this.logInForm = this.formBuilder.group({
+            login: [null, Validators.required],
+            password: [null, Validators.required]
+        })
+    }
 
     logIn(event){
         event.preventDefault();
-        if(this.validate()){
-            this.authService.login(this.login,this.password).subscribe(
-                data => {
-                    this.storageService.setLogin(data.login);
-                    this.storageService.setUserId(data.userid);
-                    this.storageService.setToken(data.token);
-                    this.warningStyle = 'none';
-                    this.router.navigate(['/user', this.storageService.getLogin()]);
-                }, error => {
-                    this.warningStyle = 'block';
-                }
-            );
-        }
+        this.getData();
+        this.authService.login(this.login,this.password).subscribe(
+            data => {
+                this.storageService.setLogin(data.login);
+                this.storageService.setUserId(data.userid);
+                this.storageService.setToken(data.token);
+                this.router.navigate(['/user', this.storageService.getLogin()]);
+            }, error => {
+                console.log(error);
+            }
+        );
     }
 
-    validate(){
-        let result = true;
-        if(!this.validateLogin()) result = false;
-        if(!this.validatePassword()) result = false;
-        return result;
-    }
-
-    validateLogin(){
-        const input = document.getElementsByTagName('input')[0];
-        console.log(input);
-        if(!this.login){
-            input.className = 'redBorder';
-            return false;
-        } else if (!this.login.trim()){
-            input.className = 'redBorder';
-            return false;
-        }
-        input.className = '';
-        return true;
-    }
-
-    validatePassword(){
-        if(!this.password){
-            console.log('Password can not be empty!');
-            return false;
-        }
-        return true;
+    getData() {
+        this.login = this.logInForm.get('login').value;
+        this.password = this.logInForm.get('password').value;
     }
 
 }

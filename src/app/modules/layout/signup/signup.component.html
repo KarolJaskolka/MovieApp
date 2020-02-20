@@ -20,8 +20,8 @@
     </div>
     <input formControlName="email" type="text" name="email" placeholder="E-Mail*">
     <div *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').touched">
-        <span class="invalid" *ngIf="signUpForm.get('email').errors.required">E-Mail is required</span>
-        <span class="invalid" *ngIf="signUpForm.get('email').errors.pattern">E-Mail is not valid</span>
+        <span class="invalid" *ngIf="signUpForm.get('email').errors.required">E-mail is required</span>
+        <span class="invalid" *ngIf="signUpForm.get('email').errors.pattern">E-mail is not valid</span>
     </div>
     <input formControlName="phone" type="text" name="phone" placeholder="Phone">
     <input formControlName="birth" type="text" name="birth" placeholder="Birth*">

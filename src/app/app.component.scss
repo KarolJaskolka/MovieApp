@@ -5,12 +5,12 @@
     grid-template-columns: repeat(6, 1fr);
 }
 
-app-header, app-footer, main{
+app-header, app-search, app-footer, main{
     grid-column: 2/6;
 }
 
 main {
-    min-height: calc(100vh - 150.4px);
+    min-height: calc(100vh - 229.2px);
     background-color: $mainBackground;
     padding: 16px;
 }
@@ -20,7 +20,7 @@ main {
         grid-template-columns: repeat(1, 1fr);
     }
     
-    app-header, app-footer, main{
+    app-header, app-search, app-footer, main{
         grid-column: 1/2;
     }
 }

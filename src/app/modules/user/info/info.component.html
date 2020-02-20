@@ -13,6 +13,7 @@
             <p class="username"><b>{{ user.login }}</b></p>
             <p><b>Name:</b> {{ user.firstname }} {{ user.lastname }}</p>
             <p><b>Birthday:</b> {{ user.birth }} </p>
+            <p class="logout" (click)="logout()" *ngIf="logged">Log Out</p>
         </aside>
     </section>
 </article>

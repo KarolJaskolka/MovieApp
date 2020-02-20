@@ -1,0 +1,31 @@
+@import '../../../../styles.scss';
+
+img {
+    height: 300px;
+    object-fit: cover;
+}
+
+span {
+    display: block;
+    text-align: center;
+    
+}
+
+.rating {
+    padding: 0.2em;
+}
+
+.title {
+    padding: 0.5em;
+}
+
+a {
+    color: $textDark;
+}
+
+i {
+    color: $focus;
+    vertical-align: top;
+    margin-left: 2px;
+    line-height: 16px;
+}

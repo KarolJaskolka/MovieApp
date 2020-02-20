@@ -13,6 +13,7 @@ import { SignUpComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeMovieComponent } from './home-movie/home-movie.component';
 
 @NgModule({
     declarations: [
@@ -24,13 +25,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         AccountComponent,
         LogoComponent,
         LogInComponent,
-        SignUpComponent
+        SignUpComponent,
+        HomeMovieComponent
     ],
     imports: [
         RouterModule,
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RouterModule
     ],
     exports: [
         HomeComponent,
@@ -41,7 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         AccountComponent,
         LogoComponent,
         LogInComponent,
-        SignUpComponent
+        SignUpComponent,
+        HomeMovieComponent
     ],
     providers: [],
     bootstrap: []
