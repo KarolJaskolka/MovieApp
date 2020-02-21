@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Movie } from '../models/movie';
 import { environment } from 'src/environments/environment';
-import { Rating } from '../models/rating';
+import { Comment } from '../models/comment';
 
 @Injectable({
     providedIn: 'root'

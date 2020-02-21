@@ -1,0 +1,42 @@
+@import '../../../../styles.scss';
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+figure {
+    padding: 1em;
+    margin: 0 auto;
+}
+
+aside {
+    padding: 1em;
+}
+
+p {
+    padding: 1em;
+    text-align: justify;
+}
+
+img {
+    max-height: 250px;
+    width: 185px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+span {
+    display: block;
+    padding: 0.5em 0em;
+}
+
+@media (max-width:768px){
+    section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

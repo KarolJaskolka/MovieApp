@@ -1,0 +1,12 @@
+<header>
+    <p class="sectionTitle">
+        {{movie.title}}
+        <span class="rating">
+            <i class="material-icons">grade</i>
+            {{movie.rating}}
+        </span>
+    </p>
+</header>
+<ng-container *ngIf="logged">
+    <app-movie-user-rating></app-movie-user-rating>
+</ng-container>

@@ -1,0 +1,6 @@
+<section>
+    <h3>{{ comment.title }}</h3>
+    <h6>{{ comment.date | date:'MMM d, y, H:mm' }}</h6>
+    <h5><a [routerLink]="['/user/', comment.user.login]">{{ comment.user.login }}</a></h5>
+    <p class="description">{{ comment.description }}</p>
+</section>

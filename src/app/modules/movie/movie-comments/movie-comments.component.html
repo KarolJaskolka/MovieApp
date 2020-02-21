@@ -1,0 +1,6 @@
+<section>
+    <p class="sectionTitle">Comments</p>
+    <ng-container *ngFor="let elem of comments">
+        <app-movie-comment [comment]="elem"></app-movie-comment>
+    </ng-container>
+</section>

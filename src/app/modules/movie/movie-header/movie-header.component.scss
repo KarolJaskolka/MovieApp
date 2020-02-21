@@ -1,0 +1,27 @@
+@import '../../../../styles.scss';
+
+header {
+    position: relative;
+}
+
+.sectionTitle {
+    font-size: 1.75em;
+}
+
+.rating {
+    position: absolute;
+    right: 25px;
+}
+
+i {
+    color: $focus;
+    font-size: 35px;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+
+@media (max-width:768px){
+    .rating {
+        display: none;
+    }
+}

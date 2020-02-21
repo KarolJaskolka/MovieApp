@@ -14,20 +14,25 @@ import { LayoutRoutingModule } from './modules/layout/layout-routing.module';
 import { UserModule } from './modules/user/user.module';
 import { UserRoutingModule } from './modules/user/user-routing.module';
 
+import { MovieRoutingModule } from './modules/movie/movie-routing.module';
+import { MovieModule } from './modules/movie/movie.module';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    LayoutRoutingModule,
-    UserRoutingModule,
-    LayoutModule,
-    UserModule,
     BrowserAnimationsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    LayoutRoutingModule,
+    MovieRoutingModule,
+    UserRoutingModule,
+    LayoutModule,
+    MovieModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
