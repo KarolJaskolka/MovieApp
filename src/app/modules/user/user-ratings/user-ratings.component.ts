@@ -4,8 +4,8 @@ import { Rating } from 'src/app/models/rating';
 
 @Component({
     selector: 'app-user-ratings',
-    templateUrl: './ratings.component.html',
-    styleUrls: ['./ratings.component.scss']
+    templateUrl: './user-ratings.component.html',
+    styleUrls: ['./user-ratings.component.scss']
 })
 
 export class UserRatingsComponent implements OnInit {

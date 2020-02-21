@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes:Routes = [
-    { path: 'user/:login', component: ProfileComponent }
+    { path: 'user/:login', component: UserProfileComponent }
 ]
 
 @NgModule({

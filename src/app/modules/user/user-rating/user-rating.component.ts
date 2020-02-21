@@ -4,8 +4,8 @@ import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-user-rating',
-    templateUrl: './rating.component.html',
-    styleUrls: ['./rating.component.scss']
+    templateUrl: './user-rating.component.html',
+    styleUrls: ['./user-rating.component.scss']
 })
 
 export class UserRatingComponent {

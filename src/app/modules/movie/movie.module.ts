@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { MovieComponent } from './main/movie.component';
+import { MovieMainComponent } from './movie-main/movie-main.component';
 import { MovieHeaderComponent } from './movie-header/movie-header.component';
 import { MovieCommentsComponent } from './movie-comments/movie-comments.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
@@ -13,7 +13,7 @@ import { MovieCommentComponent } from './movie-comment/movie-comment.component';
 
 @NgModule({
     declarations: [
-        MovieComponent,
+        MovieMainComponent,
         MovieHeaderComponent,
         MovieCommentsComponent,
         MovieInfoComponent,
@@ -25,7 +25,7 @@ import { MovieCommentComponent } from './movie-comment/movie-comment.component';
         CommonModule
     ],
     exports: [
-        MovieComponent,
+        MovieMainComponent,
         MovieHeaderComponent,
         MovieCommentsComponent,
         MovieInfoComponent,

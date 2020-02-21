@@ -4,8 +4,8 @@ import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-user-comment',
-    templateUrl: './comment.component.html',
-    styleUrls: ['./comment.component.scss']
+    templateUrl: './user-comment.component.html',
+    styleUrls: ['./user-comment.component.scss']
 })
 
 export class UserCommentComponent {

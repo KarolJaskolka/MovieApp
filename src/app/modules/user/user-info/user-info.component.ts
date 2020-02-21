@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-user-info',
-    templateUrl: './info.component.html',
-    styleUrls: ['./info.component.scss']
+    templateUrl: './user-info.component.html',
+    styleUrls: ['./user-info.component.scss']
 })
 
 export class UserInfoComponent implements OnInit {

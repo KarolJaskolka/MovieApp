@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { ProfileComponent } from './profile/profile.component';
-import { UserCommentsComponent } from './comments/comments.component';
-import { UserCommentComponent } from './comment/comment.component';
-import { UserRatingsComponent } from './ratings/ratings.component';
-import { UserRatingComponent } from './rating/rating.component';
-import { UserInfoComponent } from './info/info.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserCommentsComponent } from './user-comments/user-comments.component';
+import { UserCommentComponent } from './user-comment/user-comment.component';
+import { UserRatingsComponent } from './user-ratings/user-ratings.component';
+import { UserRatingComponent } from './user-rating/user-rating.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
-        ProfileComponent,
+        UserProfileComponent,
         UserCommentsComponent,
         UserCommentComponent,
         UserRatingsComponent,
@@ -25,7 +25,7 @@ import { RouterModule } from '@angular/router';
         RouterModule
     ],
     exports: [
-        ProfileComponent,
+        UserProfileComponent,
         UserCommentsComponent,
         UserCommentComponent,
         UserRatingsComponent,

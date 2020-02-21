@@ -4,8 +4,8 @@ import { Comment } from 'src/app/models/comment';
 
 @Component({
     selector: 'app-user-comments',
-    templateUrl: './comments.component.html',
-    styleUrls: ['./comments.component.scss']
+    templateUrl: './user-comments.component.html',
+    styleUrls: ['./user-comments.component.scss']
 })
 
 export class UserCommentsComponent implements OnInit {

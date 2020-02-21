@@ -6,11 +6,11 @@ import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
     selector: 'app-movie',
-    templateUrl: './movie.component.html',
-    styleUrls: ['./movie.component.scss']
+    templateUrl: './movie-main.component.html',
+    styleUrls: ['./movie-main.component.scss']
 })
 
-export class MovieComponent implements OnInit {
+export class MovieMainComponent implements OnInit {
     
     movie: Movie;
     name: string;

@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 
 @Component({
-    selector: 'app-profile',
-    templateUrl: './profile.component.html',
-    styles: ['./profile.component.scss']
+    selector: 'app-user-profile',
+    templateUrl: './user-profile.component.html',
+    styles: ['./user-profile.component.scss']
 })
 
-export class ProfileComponent implements OnInit {
+export class UserProfileComponent implements OnInit {
 
     login: string;
     user: User;
