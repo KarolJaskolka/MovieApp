@@ -29,6 +29,11 @@ export class UserService {
                     + '/ratings?orderBy=' + orderBy + '&limit=' + limit + '&offset=' + offset);
     }
 
+    getUserRatingByMovie(userid: number, movieid:number){
+        return this.http.get<Rating>(this.host + 'api/users/' + userid
+                    + '/ratings/' + movieid);
+    }
+
     register(user: User){
         return this.http.post<User>(this.host + 'api/users/', user);
     }

@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
 import { Movie } from 'src/app/models/movie';
-import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
     selector: 'app-movie-header',
@@ -12,15 +11,6 @@ export class MovieHeaderComponent {
     
     @Input() movie: Movie;
 
-    logged: boolean = false;
-
-    constructor(private storageService:StorageService) {}
-
-    ngOnInit(): void {
-        if(this.storageService.getUserId()){
-            this.logged = true;
-        }
-    }
-
+    constructor() {}
 
 }

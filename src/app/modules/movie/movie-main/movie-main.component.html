@@ -1,5 +1,8 @@
 <article *ngIf="movie">
     <app-movie-header [movie]="movie"></app-movie-header>
+    <ng-container *ngIf="logged">
+        <app-movie-user-rating [movieid]="movie.movieid" [userid]="userid"></app-movie-user-rating>
+    </ng-container>
     <app-movie-info [movie]="movie"></app-movie-info>
     <app-movie-comments [movie]="movie"></app-movie-comments>
 </article>

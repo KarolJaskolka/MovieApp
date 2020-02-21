@@ -9,11 +9,11 @@ import { AccountComponent } from './account/account.component';
 import { LogoComponent } from './logo/logo.component';
 import { LogInComponent } from './login/login.component';
 import { SignUpComponent } from './signup/signup.component';
+import { HomeMovieComponent } from './home-movie/home-movie.component';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeMovieComponent } from './home-movie/home-movie.component';
 
 @NgModule({
     declarations: [

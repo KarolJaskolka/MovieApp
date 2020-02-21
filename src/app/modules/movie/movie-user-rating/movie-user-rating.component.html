@@ -1,1 +1,8 @@
-<p>Your Rating : </p>
+<section>
+    <p *ngIf="rating">
+        Your Rating :
+        <i *ngFor="let i of starsFocus" (click)="setRating($event)" class="material-icons star starFocus">grade</i> 
+        <i *ngFor="let i of starsBlur" (click)="setRating($event)" class="material-icons star starBlur">grade</i>
+        <input type="submit" (click)="sendRating($event)" class="hidden" value="Save">
+    </p>
+</section>

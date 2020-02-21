@@ -1,0 +1,38 @@
+@import '../../../../styles.scss';
+
+section {
+    background-color: $lightTheme;
+    text-align: center;
+    padding: 0.5em;
+}
+
+i {
+    vertical-align: middle;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.starFocus {
+    color: $focus;
+}
+
+.starBlur {
+    color: $textDark;
+}
+
+.btnSave {
+    margin-left: 5px;
+    background-color: $focus;
+    border-width: 0px;
+    border-radius: 2px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.btnSave:hover {
+    background-color: #8d813a;
+}
+
+.hidden {
+    display: none;
+}

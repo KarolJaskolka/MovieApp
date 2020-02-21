@@ -15,6 +15,7 @@ export class MovieMainComponent implements OnInit {
     movie: Movie;
     name: string;
     logged: boolean = false;
+    userid: number;
 
     constructor(private route:ActivatedRoute, private movieService:MovieService,
         private storageService:StorageService) {}
@@ -26,7 +27,8 @@ export class MovieMainComponent implements OnInit {
         this.movieService.getMovie(this.name).subscribe(data => {
             this.movie = data;
         })
-        if(this.storageService.getUserId()){
+        this.userid = +this.storageService.getUserId()
+        if(this.userid){
             this.logged = true;
         }
     }

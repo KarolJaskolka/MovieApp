@@ -16,26 +16,26 @@ export class RatingService {
     constructor(private http:HttpClient, private service:StorageService) {}
 
     sendRating(rating: Rating){
-        this.http.post(this.host + 'api/ratings', {
+        return this.http.post(this.host + 'api/ratings', {
             userid: rating.userid,
             movieid: rating.movieid,
             stars: rating.stars
         }, {
-            headers: new HttpHeaders().set('Authorization', this.service.getToken()),
+            headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.service.getToken()),
         });
     }
 
     updateRating(rating: Rating){
-        this.http.patch(this.host + 'api/ratings/' + rating.ratingid, {
+        return this.http.patch(this.host + 'api/ratings/' + rating.ratingid, {
             stars: rating.stars
         }, {
-            headers: new HttpHeaders().set('Authorization', this.service.getToken()),
+            headers: new HttpHeaders().set('Authorization', 'Bearer ' +  this.service.getToken()),
         });
     }
 
     removeRating(ratingid: number){
-        this.http.delete(this.host + 'api/ratings/' + ratingid, {
-            headers: new HttpHeaders().set('Authorization', this.service.getToken()),
+        return this.http.delete(this.host + 'api/ratings/' + ratingid, {
+            headers: new HttpHeaders().set('Authorization', 'Bearer ' +  this.service.getToken()),
         });
     }
 
