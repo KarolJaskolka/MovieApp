@@ -6,6 +6,8 @@ import { MovieCommentsComponent } from './movie-comments/movie-comments.componen
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { MovieUserRatingComponent } from './movie-user-rating/movie-user-rating.component';
 import { MovieCommentComponent } from './movie-comment/movie-comment.component';
+import { MovieViewComponent } from './movie-view/movie-view.component';
+import { MovieRankingComponent } from './movie-ranking/movie-ranking.component';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -17,7 +19,9 @@ import { CommonModule } from '@angular/common';
         MovieCommentsComponent,
         MovieInfoComponent,
         MovieUserRatingComponent,
-        MovieCommentComponent
+        MovieCommentComponent,
+        MovieViewComponent,
+        MovieRankingComponent
     ],
     imports: [
         RouterModule,
@@ -29,7 +33,9 @@ import { CommonModule } from '@angular/common';
         MovieCommentsComponent,
         MovieInfoComponent,
         MovieUserRatingComponent,
-        MovieCommentComponent
+        MovieCommentComponent,
+        MovieViewComponent,
+        MovieRankingComponent
     ],
     providers: [],
     bootstrap: []

@@ -8,18 +8,12 @@ import { Component } from "@angular/core";
 
 export class FormComponent {
 
-    login: boolean = true;
+    isLogin: boolean = true;
 
     constructor() {}
 
-    setForm(event, value: boolean){
-        const elem = event.target;
-        const active = document.querySelector('button.active');
-
-        active.className = "";
-        elem.className = "active";
-
-        this.login = value; 
+    setForm(value: boolean){
+        this.isLogin = value; 
     }
 
 }

@@ -22,7 +22,6 @@ export class MovieCommentsComponent {
     ngOnInit(): void {
         this.movieService.getMovieComments(this.movie.name, 10, this.offset).subscribe(data => {
             this.comments = data;
-            console.log(this.comments);
         });
         if(this.storageService.getUserId()){
             this.logged = true;

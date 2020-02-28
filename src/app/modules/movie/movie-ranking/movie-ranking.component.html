@@ -1,0 +1,6 @@
+<section>
+    <p class="sectionTitle">TOP #100</p>
+    <ng-container *ngFor="let elem of movies; let i = index">
+        <app-movie-view [place]="i+1" [movie]="elem"></app-movie-view>
+    </ng-container>
+</section>
