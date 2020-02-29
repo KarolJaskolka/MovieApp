@@ -26,7 +26,6 @@ export class MovieNewCommentComponent implements OnInit {
     }
 
     send() {
-        console.log('click');
         if(this.comment.title && this.comment.description){
             this.commentService.sendComment(this.comment).subscribe(data => {
                 console.log(data);

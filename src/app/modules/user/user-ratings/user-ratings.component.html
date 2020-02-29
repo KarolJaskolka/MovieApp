@@ -1,6 +1,6 @@
 <article>
     <p class="sectionTitle">Recent Ratings</p>
-    <ng-container *ngIf="ratings.length > 0; else empty">
+    <ng-container *ngIf="ratings && ratings.length > 0; else empty">
         <div class="ratingsContainer">
             <ng-container *ngFor="let elem of ratings">
                 <app-user-rating [rating]="elem"></app-user-rating>

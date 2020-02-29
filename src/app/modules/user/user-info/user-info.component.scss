@@ -5,6 +5,10 @@ section {
     padding: 1em;
 }
 
+figure {
+    padding: 0em 2em;
+}
+
 p {
     background-color: $mainBackground;
     color: $textDark;
@@ -24,7 +28,8 @@ p {
 }
 
 aside {
-    margin: auto 1em;
+    margin: auto 2em;
+    text-align: left;
 }
 
 .logout {

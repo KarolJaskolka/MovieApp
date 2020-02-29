@@ -17,9 +17,9 @@ export class SearchComponent {
         this.userInput = '';
     }
 
-    search(){
-        this.clear();
+    search(){ 
         this.router.navigate(['/search'], { queryParams: {title: this.userInput} });
+        this.clear();
     }
 
 }
