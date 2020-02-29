@@ -1,6 +1,11 @@
 <article>
     <p class="sectionTitle">Recent Comments</p>
-    <ng-container *ngFor="let elem of comments">
-        <app-user-comment [comment]="elem"></app-user-comment>
+    <ng-container *ngIf="comments.length > 0; else empty">
+        <ng-container *ngFor="let elem of comments">
+            <app-user-comment [comment]="elem"></app-user-comment>
+        </ng-container>
     </ng-container>
+    <ng-template #empty>
+        <p>You haven't commented any movies :(</p>
+    </ng-template>
 </article>

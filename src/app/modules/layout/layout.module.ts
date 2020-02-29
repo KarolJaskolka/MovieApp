@@ -14,6 +14,7 @@ import { HomeMovieComponent } from './home-movie/home-movie.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         LogoComponent,
         LogInComponent,
         SignUpComponent,
-        HomeMovieComponent
+        HomeMovieComponent,
+        SuccessComponent
     ],
     imports: [
         RouterModule,
@@ -45,7 +47,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         LogoComponent,
         LogInComponent,
         SignUpComponent,
-        HomeMovieComponent
+        HomeMovieComponent,
+        SuccessComponent
     ],
     providers: [],
     bootstrap: []

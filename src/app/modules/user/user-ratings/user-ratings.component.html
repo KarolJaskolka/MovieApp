@@ -1,8 +1,13 @@
 <article>
     <p class="sectionTitle">Recent Ratings</p>
-    <div class="ratingsContainer">
-        <ng-container *ngFor="let elem of ratings">
-            <app-user-rating [rating]="elem"></app-user-rating>
-        </ng-container>
-    </div>
+    <ng-container *ngIf="ratings.length > 0; else empty">
+        <div class="ratingsContainer">
+            <ng-container *ngFor="let elem of ratings">
+                <app-user-rating [rating]="elem"></app-user-rating>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-template #empty>
+        <p>You haven't rated any movies :(</p>
+    </ng-template>
 </article>

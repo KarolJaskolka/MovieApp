@@ -1,6 +1,12 @@
 <section>
     <p class="sectionTitle">Comments</p>
-    <ng-container *ngFor="let elem of comments">
-        <app-movie-comment [comment]="elem"></app-movie-comment>
+    <app-movie-new-comment [movieid]="movie.movieid"></app-movie-new-comment>
+    <ng-container *ngIf="comments && comments.length > 0; else empty">
+        <ng-container *ngFor="let elem of comments">
+            <app-movie-comment [comment]="elem"></app-movie-comment>
+        </ng-container>
     </ng-container>
+    <ng-template #empty>
+        <p>No Comments</p>
+    </ng-template>
 </section>

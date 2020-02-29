@@ -1,0 +1,40 @@
+@import '../../../../styles.scss';
+
+section {
+    padding: 1em;
+    background-color: #bbbbbb;
+    text-align: center;
+}
+
+input[type=text], textarea {
+    display: block;
+    padding: 12px 16px;
+    margin: 0em auto 1em auto;
+    border-radius: 5px;
+    border: 1px solid $textGray;
+    width: 60%;
+    
+}
+
+textarea {
+    height: 75px;
+}
+
+button {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: $theme;
+    border: 1px solid $main;
+    color: $text;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #11124d;
+    cursor: initial;
+}
+
+p {
+    padding: 1em;
+    text-align: center;
+}

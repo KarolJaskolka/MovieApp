@@ -1,0 +1,12 @@
+<section>
+    <form #commentForm="ngForm">
+        <input name="title" required [(ngModel)]="comment.title" type="text" placeholder="Title">
+        <textarea name="description" required [(ngModel)]="comment.description"  placeholder="Comment..." ></textarea>
+        <ng-container *ngIf="logged; else empty">
+            <button (click)="send()" [disabled]="!commentForm.valid">Add comment</button>
+        </ng-container>
+        <ng-template #empty>
+            <p>You must be logged in to add comments.</p>
+        </ng-template>
+    </form>
+</section>

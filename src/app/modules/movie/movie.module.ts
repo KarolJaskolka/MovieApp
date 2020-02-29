@@ -9,10 +9,11 @@ import { MovieCommentComponent } from './movie-comment/movie-comment.component';
 import { MovieViewComponent } from './movie-view/movie-view.component';
 import { MovieRankingComponent } from './movie-ranking/movie-ranking.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
+import { MovieNewCommentComponent } from './movie-new-comment/movie-new-comment.component';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -24,11 +25,13 @@ import { CommonModule } from '@angular/common';
         MovieCommentComponent,
         MovieViewComponent,
         MovieRankingComponent,
-        MovieSearchComponent
+        MovieSearchComponent,
+        MovieNewCommentComponent
     ],
     imports: [
         RouterModule,
-        CommonModule
+        CommonModule,
+        FormsModule
     ],
     exports: [
         MovieMainComponent,
@@ -39,7 +42,8 @@ import { CommonModule } from '@angular/common';
         MovieCommentComponent,
         MovieViewComponent,
         MovieRankingComponent,
-        MovieSearchComponent
+        MovieSearchComponent,
+        MovieNewCommentComponent
     ],
     providers: [],
     bootstrap: []
