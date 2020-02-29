@@ -2,6 +2,7 @@
     <p *ngIf="rating">
         Your Rating :
         <ng-container *ngFor="let elem of stars; index as i">
+            <!-- elem 0 or 1-->
             <ng-container *ngIf="elem; else dark">
                 <i (click)="setRating(i+1)" class="material-icons starFocus">grade</i>
             </ng-container>

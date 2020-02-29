@@ -8,9 +8,11 @@ import { MovieUserRatingComponent } from './movie-user-rating/movie-user-rating.
 import { MovieCommentComponent } from './movie-comment/movie-comment.component';
 import { MovieViewComponent } from './movie-view/movie-view.component';
 import { MovieRankingComponent } from './movie-ranking/movie-ranking.component';
+import { MovieSearchComponent } from './movie-search/movie-search.component';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
 
 @NgModule({
     declarations: [
@@ -21,7 +23,8 @@ import { CommonModule } from '@angular/common';
         MovieUserRatingComponent,
         MovieCommentComponent,
         MovieViewComponent,
-        MovieRankingComponent
+        MovieRankingComponent,
+        MovieSearchComponent
     ],
     imports: [
         RouterModule,
@@ -35,7 +38,8 @@ import { CommonModule } from '@angular/common';
         MovieUserRatingComponent,
         MovieCommentComponent,
         MovieViewComponent,
-        MovieRankingComponent
+        MovieRankingComponent,
+        MovieSearchComponent
     ],
     providers: [],
     bootstrap: []

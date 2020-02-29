@@ -23,6 +23,11 @@ export class MovieService {
             + '&limit=' + limit + '&offset=' + offset);
     }
 
+    getMoviesByTitle(title:string, orderBy: string, limit: number, offset:number) {
+        return this.http.get<Array<Movie>>(this.host + 'api/movies?search=' + title + '&orderBy=' + orderBy
+            + '&limit=' + limit + '&offset=' + offset);
+    }
+
     getMovieComments(name: string, limit:number, offset: number){
         return this.http.get<Array<Comment>>(this.host + 'api/movies/' + name 
             + '/comments?limit=' + limit + '&offset=' + offset);

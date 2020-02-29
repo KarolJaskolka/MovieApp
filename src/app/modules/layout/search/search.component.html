@@ -1,6 +1,6 @@
 <section>
     <div class="bar">
-        <input type="text" name="search" placeholder="Search a movie...">
-        <i class="material-icons">search</i>
+        <input [(ngModel)]="userInput" type="text" name="search" placeholder="Search a movie...">
+        <a (click)="clear()" [routerLink]="['/search']" [queryParams]="{title: userInput}"><i class="material-icons">search</i></a>
     </div>
 </section>

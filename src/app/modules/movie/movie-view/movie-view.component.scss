@@ -2,8 +2,16 @@
 
 section {
     border-bottom: 1px solid $textDark;
-    padding: 1em;
+    padding: 1em 0em;
     display: flex;
+}
+
+figure{
+    transition: 0.2s;
+}
+
+figure:hover {
+    transform: scale(1.1);
 }
 
 h3, h5 {
@@ -15,17 +23,55 @@ h5 {
 }
 
 img {
-    height: 150px;
-    width: 100px;
+    height: 175px;
+    width: 125px;
     object-fit: cover;
+    vertical-align: middle;
 }
 
-aside {
+.movie {
     padding: 1em;
+    margin: auto 0em;
 }
 
 p {
     font-size: 30px;
     padding: 0em 0.5em;
     margin: auto 0;
+    min-width: 80px;
+    text-align: center;
+}
+
+a {
+    color: $textDark;
+}
+
+aside {
+    justify-self: flex-end;
+    margin-left: auto;
+    align-self: center;
+    min-width: 110px;
+    font-size: 25px;
+    padding-right: 1em;
+}
+
+i {
+    color: $focus;
+    font-size: 25px;
+    vertical-align: top;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+@media (max-width: 1000px){
+    aside {
+        min-width: 85px;
+        font-size: 22px;
+        padding-right: 0em;
+    }
+    
+    i {
+        font-size: 20px;
+    }
+    
 }

@@ -1,6 +1,18 @@
 @import '../../../../styles.scss';
 
-.ranking {
+.info {
+    text-align: center;
+    padding: 1em;
+    animation: 4s;
+    animation-name: info;
+}
+
+@keyframes info {
+    from {color: $mainBackground;}
+    to {color: $textDark;}
+  }
+
+.search {
     display: grid;
     grid-template-columns: repeat(7,1fr);
 }
@@ -10,7 +22,7 @@ section {
 }
 
 @media (max-width:1000px){
-    .ranking {
+    .search {
         grid-template-columns: repeat(1,1fr);
     }
     
