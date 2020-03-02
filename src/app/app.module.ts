@@ -34,7 +34,7 @@ import { MovieModule } from './modules/movie/movie.module';
     LayoutModule,
     MovieModule,
     UserModule,
-    ToastrModule
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

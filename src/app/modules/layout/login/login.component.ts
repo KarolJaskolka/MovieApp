@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LogInComponent implements OnInit {
     logInForm: FormGroup;
 
     constructor(private authService:AuthService, private storageService:StorageService, 
-        private router:Router,private formBuilder:FormBuilder) {}
+        private router:Router,private formBuilder:FormBuilder, private toastrService:ToastrService) {}
 
     ngOnInit(): void {
         this.logInForm = this.formBuilder.group({
@@ -38,7 +39,7 @@ export class LogInComponent implements OnInit {
                 this.storageService.setToken(data.token);
                 this.router.navigate(['/user', this.storageService.getLogin()]);
             }, error => {
-                console.log(error);
+                this.toastrService.error('Wrong login or password', 'Error');
             }
         );
     }

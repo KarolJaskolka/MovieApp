@@ -29,3 +29,9 @@ i {
     margin-left: 2px;
     line-height: 16px;
 }
+
+@media( max-width: 1000px){
+    img {
+        height: 200px;
+    }
+}

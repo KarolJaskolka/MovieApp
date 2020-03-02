@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { environment } from 'src/environments/environment';
+import { Comment } from 'src/app/models/comment';
 
 @Component({
     selector: 'app-movie-comment',

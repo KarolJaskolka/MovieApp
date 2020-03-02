@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { StorageService } from 'src/app/services/storage.service';
 import { CommentService } from 'src/app/services/comment.service';
 import { Comment } from 'src/app/models/comment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-movie-new-comment',
@@ -15,7 +16,8 @@ export class MovieNewCommentComponent implements OnInit {
     comment: Comment = {} as Comment;
     @Input() movieid: number;
 
-    constructor(private storageService:StorageService, private commentService:CommentService) {}
+    constructor(private storageService:StorageService, private commentService:CommentService, 
+        private toastrService:ToastrService) {}
 
     ngOnInit(): void {
         this.comment.userid = +this.storageService.getUserId();
@@ -28,9 +30,9 @@ export class MovieNewCommentComponent implements OnInit {
     send() {
         if(this.comment.title && this.comment.description){
             this.commentService.sendComment(this.comment).subscribe(data => {
-                console.log(data);
+                this.toastrService.success('Comment has been sent', 'Done!');
             }, error => {
-                console.log(error);
+                this.toastrService.success('Something went wrong :/', 'Error!')
             });
             this.comment.title = '';
             this.comment.description = '';

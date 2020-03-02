@@ -1,5 +1,5 @@
 <article>
-    <a [routerLink]="['/user/' + login + '/comments']"><p class="sectionTitle">Recent Comments</p></a>
+    <p class="sectionTitle"><a [routerLink]="['/user/' + login + '/comments']">Recent Comments</a></p>
     <ng-container *ngIf="comments && comments.length > 0; else empty">
         <ng-container *ngFor="let elem of comments">
             <app-user-comment [comment]="elem"></app-user-comment>

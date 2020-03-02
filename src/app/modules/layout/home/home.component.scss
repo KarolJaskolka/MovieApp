@@ -21,6 +21,10 @@ a {
     color: $text;
 }
 
+a:hover {
+    color: $textGray;
+}
+
 @media (max-width:768px){
     .movies {
         grid-template-columns: repeat(2, 1fr);

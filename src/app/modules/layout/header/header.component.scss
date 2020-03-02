@@ -7,8 +7,7 @@ header {
     color: $text;
     font-family: 'Tomorrow', sans-serif;
     display: flex;
-    align-items: center;
-    
+    align-items: center;   
 }
 
 app-logo {
@@ -22,6 +21,12 @@ app-account {
 }
 
 @media (max-width: 1000px){
+
+    header {
+        padding: 0.75em 1em;
+        font-size: 2em; 
+    }
+
     app-search {
         display: none;
     }

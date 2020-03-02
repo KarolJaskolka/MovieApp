@@ -65,13 +65,31 @@ i {
 
 @media (max-width: 1000px){
     aside {
-        min-width: 85px;
-        font-size: 22px;
+        min-width: 80px;
+        font-size: 18px;
         padding-right: 0em;
     }
     
     i {
-        font-size: 20px;
+        font-size: 18px;
     }
     
+    p {
+        font-size: 18px;
+        min-width: 60px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h5 {
+        display: none;
+    }
+
+    img {
+        height: 125px;
+        width: 75px;
+    }
+
 }

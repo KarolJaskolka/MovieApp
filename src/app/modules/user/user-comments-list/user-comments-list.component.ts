@@ -4,6 +4,7 @@ import { UserService } from 'src/app/services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
 import { ToastrService } from 'ngx-toastr';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
     selector: 'app-user-comments-list',
@@ -16,9 +17,11 @@ export class UserCommentsListComponent implements OnInit {
     comments: Array<Comment>;
     login: string;
     offset: number = 0;
+    logged: boolean = false;
 
     constructor(private userService:UserService, private route:ActivatedRoute, 
-        private commentService:CommentService, private toastrService:ToastrService) {}
+        private commentService:CommentService, private toastrService:ToastrService, 
+        private storageService:StorageService) {}
 
     ngOnInit(): void {
         this.route.params.subscribe(params => {
@@ -27,6 +30,9 @@ export class UserCommentsListComponent implements OnInit {
         this.userService.getUserComments(this.login, 25, this.offset).subscribe(data => {
             this.comments = data;
         })
+        if(this.login == this.storageService.getLogin()){
+            this.logged = true;
+        }
     }
 
     delete(comment:Comment){
@@ -34,7 +40,7 @@ export class UserCommentsListComponent implements OnInit {
             this.comments = this.comments.filter(e => e.commentid != comment.commentid);
             this.toastrService.success('Comment has been removed', 'Done!');
         }, error => {
-            this.toastrService.success('Something went wrong :/', 'Error');
+            this.toastrService.success('Something went wrong :/', 'Error!');
         })
     }
 

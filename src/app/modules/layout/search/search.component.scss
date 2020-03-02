@@ -42,3 +42,9 @@ i:hover{
     color: $textHover;
     cursor: pointer;
 }
+
+@media (max-width:1000px){
+    input[type=text]{
+        width: 250px;
+    }
+}

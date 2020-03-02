@@ -3,6 +3,7 @@
 section {
     display: flex;
     padding: 1em;
+    align-self: center;
 }
 
 figure {
@@ -41,4 +42,21 @@ aside {
 i {
     font-size: 150px;
     color: $lightTheme;
+    vertical-align: bottom;
+}
+
+@media (max-width: 1000px){
+ 
+    i {
+        font-size: 100px;
+    }
+
+    figure {
+        padding: 0em 0.5em;
+    }
+
+    aside {
+        margin: auto 0.5em;
+    }
+
 }
