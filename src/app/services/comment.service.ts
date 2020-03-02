@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Comment } from '../models/comment';
 import { StorageService } from './storage.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +15,7 @@ export class CommentService {
 
     constructor(private http:HttpClient, private service:StorageService) {}
 
-    sendComment(comment: Comment){
+    sendComment(comment: Comment):Observable<any>{
         return this.http.post(this.host + 'api/comments', {
             userid: comment.userid,
             movieid: comment.movieid,
@@ -25,7 +26,7 @@ export class CommentService {
         });
     }
 
-    updateComment(comment: Comment){
+    updateComment(comment: Comment):Observable<any>{
         return this.http.patch(this.host + 'api/comments/' + comment.commentid, {
             title: comment.title,
             description: comment.description
@@ -34,7 +35,7 @@ export class CommentService {
         });
     }
 
-    removeComment(commentid: number){
+    removeComment(commentid: number):Observable<any>{
         return this.http.delete(this.host + 'api/comments/' + commentid, {
             headers: new HttpHeaders().set('Authorization', 'Bearer ' +  this.service.getToken()),
         });

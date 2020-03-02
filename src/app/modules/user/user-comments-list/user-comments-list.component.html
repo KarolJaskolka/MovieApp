@@ -1,0 +1,10 @@
+<section>
+    <p class="sectionTitle">Your Comments</p>
+    <ng-container *ngIf="comments">
+        <ng-container *ngFor="let elem of comments">
+            <app-user-comment [comment]="elem">
+                <i (click)="delete(elem)" class="material-icons">delete</i>
+            </app-user-comment>
+        </ng-container>
+    </ng-container>
+</section>

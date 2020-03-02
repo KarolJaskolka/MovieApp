@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpHeaders } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { Rating } from '../models/rating';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,7 @@ export class RatingService {
 
     constructor(private http:HttpClient, private service:StorageService) {}
 
-    sendRating(rating: Rating){
+    sendRating(rating: Rating):Observable<any>{
         return this.http.post(this.host + 'api/ratings', {
             userid: rating.userid,
             movieid: rating.movieid,
@@ -25,7 +26,7 @@ export class RatingService {
         });
     }
 
-    updateRating(rating: Rating){
+    updateRating(rating: Rating):Observable<any>{
         return this.http.patch(this.host + 'api/ratings/' + rating.ratingid, {
             stars: rating.stars
         }, {
@@ -33,7 +34,7 @@ export class RatingService {
         });
     }
 
-    removeRating(ratingid: number){
+    removeRating(ratingid: number):Observable<any>{
         return this.http.delete(this.host + 'api/ratings/' + ratingid, {
             headers: new HttpHeaders().set('Authorization', 'Bearer ' +  this.service.getToken()),
         });

@@ -6,10 +6,10 @@ import { UserCommentComponent } from './user-comment/user-comment.component';
 import { UserRatingsComponent } from './user-ratings/user-ratings.component';
 import { UserRatingComponent } from './user-rating/user-rating.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { UserCommentsListComponent } from './user-comments-list/user-comments-list.component';
 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
 
 @NgModule({
     declarations: [
@@ -18,7 +18,8 @@ import { RouterModule } from '@angular/router';
         UserCommentComponent,
         UserRatingsComponent,
         UserRatingComponent,
-        UserInfoComponent
+        UserInfoComponent,
+        UserCommentsListComponent
     ],
     imports: [
         CommonModule,
@@ -30,7 +31,8 @@ import { RouterModule } from '@angular/router';
         UserCommentComponent,
         UserRatingsComponent,
         UserRatingComponent,
-        UserInfoComponent
+        UserInfoComponent,
+        UserCommentsListComponent
     ],
     providers: [],
     bootstrap: []
