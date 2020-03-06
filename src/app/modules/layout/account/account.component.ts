@@ -15,7 +15,7 @@ export class AccountComponent {
     session(){
         const login = this.storageService.getLogin();
         if(!login){
-            this.router.navigate(['/login']);
+            this.router.navigate(['/form']);
         } else{
             this.router.navigate(['/user', login]);
         }

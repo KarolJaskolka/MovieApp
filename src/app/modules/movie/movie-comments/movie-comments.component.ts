@@ -20,11 +20,19 @@ export class MovieCommentsComponent {
     constructor(private storageService:StorageService, private movieService:MovieService) {}
 
     ngOnInit(): void {
-        this.movieService.getMovieComments(this.movie.name, 10, this.offset).subscribe(data => {
-            this.comments = data;
-        });
+        this.getComments();
         if(this.storageService.getUserId()){
             this.logged = true;
         }
+    }
+
+    getComments(){
+        this.movieService.getMovieComments(this.movie.name, 10, this.offset).subscribe(data => {
+            this.comments = data;
+        });
+    }
+
+    reloadComments(event){
+        this.getComments();
     }
 }

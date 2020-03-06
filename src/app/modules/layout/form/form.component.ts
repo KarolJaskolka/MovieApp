@@ -8,12 +8,6 @@ import { Component } from "@angular/core";
 
 export class FormComponent {
 
-    isLogin: boolean = true;
-
     constructor() {}
-
-    setForm(value: boolean){
-        this.isLogin = value; 
-    }
 
 }

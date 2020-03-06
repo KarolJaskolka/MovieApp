@@ -1,14 +1,9 @@
 <section>
-    <div class="form">
+    <div class="forms">
         <div class="buttons">
-            <button (click)="setForm(true)" [class.active]="isLogin">Log In</button>
-            <button (click)="setForm(false)" [class.active]="!isLogin">Sign Up</button>
+            <a routerLink="login" routerLinkActive="active" class="btn">Log In</a>
+            <a routerLink="register" routerLinkActive="active" class="btn">Sign Up</a>
         </div>
-        <ng-container *ngIf="isLogin;else register">
-            <app-log-in></app-log-in>
-        </ng-container>
-        <ng-template #register>
-            <app-sign-up></app-sign-up>
-        </ng-template>
+        <router-outlet></router-outlet>
     </div>
 </section>

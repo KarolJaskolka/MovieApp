@@ -1,6 +1,9 @@
 <section>
     <p class="sectionTitle">Comments</p>
-    <app-movie-new-comment [movieid]="movie.movieid"></app-movie-new-comment>
+    <app-movie-new-comment 
+    [movieid]="movie.movieid"
+    (addComment)="reloadComments($event)">
+    </app-movie-new-comment>
     <ng-container *ngIf="comments && comments.length > 0; else empty">
         <ng-container *ngFor="let elem of comments">
             <app-movie-comment [comment]="elem"></app-movie-comment>

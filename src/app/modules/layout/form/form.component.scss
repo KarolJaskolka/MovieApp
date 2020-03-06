@@ -6,7 +6,7 @@ section {
     grid-template-columns: repeat(3,1fr);
 }
 
-.form {
+.forms {
     grid-column: 2/3;
     color: $textDark;
     background-color: $form;
@@ -19,17 +19,16 @@ section {
     display: flex;
 }
 
-button {
+.btn {
     flex: 1;
-    background-color: $form;
-    border-width: 0px 0px 5px 0px;
-    border-color: $form;
-    background-color: $form;
-    outline: 0px;
+    background-color: $text;
     padding: 1em;
+    color: $textDark;
+    text-align: center;
+    display: block;
 }
 
-button:hover {
+.btn:hover {
     opacity: 0.8;
 }
 
@@ -45,7 +44,7 @@ button:hover {
         grid-template-columns: repeat(6,1fr);
     }
 
-    .form {
+    .forms {
         grid-column: 2/6;
     }
 }
