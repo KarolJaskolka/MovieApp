@@ -10,3 +10,11 @@ p {
     padding: 1em;
     text-align: center;
 }
+
+a {
+    color: $text;
+}
+
+a:hover {
+    color: $textGray;
+}

@@ -1,6 +1,16 @@
 <section>
-    <h3>{{ comment.title }}</h3>
-    <h6>{{ comment.date | date:'MMM d, y, H:mm' }}</h6>
-    <h5><a [routerLink]="['/user/', comment.user.login]">{{ comment.user.login }}</a></h5>
-    <p class="description">{{ comment.description }}</p>
+    <figure>
+        <ng-container *ngIf="comment.user.avatar; else default">
+            <img class="avatar" src="{{host}}{{comment.user.avatar}}">
+        </ng-container>
+        <ng-template #default>
+            <i class="material-icons">account_circle</i>
+        </ng-template>
+    </figure>
+    <aside>
+        <h3>{{ comment.title }}</h3>
+        <h6>{{ comment.date | date:'MMM d, y, H:mm' }}</h6>
+        <h5><a [routerLink]="['/user/', comment.user.login]">{{ comment.user.login }}</a></h5>
+        <p class="description">{{ comment.description }}</p>
+    </aside>
 </section>

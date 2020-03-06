@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { UserService } from 'src/app/services/user.service';
 import { Rating } from 'src/app/models/rating';
 import { RatingService } from 'src/app/services/rating.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-movie-user-rating',
@@ -19,7 +20,8 @@ export class MovieUserRatingComponent implements OnInit {
     new: boolean;
     hidden: boolean = true;
 
-    constructor(private userService: UserService, private ratingService:RatingService) {}
+    constructor(private userService: UserService, private ratingService:RatingService, 
+        private toastrService:ToastrService) {}
 
     ngOnInit(): void {
         this.userService.getUserRatingByMovie(this.userid, this.movieid).subscribe(data => {
@@ -51,16 +53,17 @@ export class MovieUserRatingComponent implements OnInit {
         this.hidden = true;
         if(this.new){
             this.ratingService.sendRating(this.rating).subscribe(data => {
-                console.log(data);
+                this.toastrService.success('Your rating has been saved', 'Done!');
+                this.new = false;
             }, error => {
-                console.log(error);
+                this.toastrService.error('Something went wrong :/', 'Error');
             });
         }
         else{
             this.ratingService.updateRating(this.rating).subscribe(data => {
-                console.log(data);
+                this.toastrService.success('Your rating has been saved', 'Done!');
             }, error => {
-                console.log(error);
+                this.toastrService.error('Something went wrong :/', 'Error');
             });
         }
     }

@@ -3,6 +3,7 @@ import { User } from 'src/app/models/user';
 import { environment } from 'src/environments/environment';
 import { StorageService } from 'src/app/services/storage.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-user-info',
@@ -16,7 +17,7 @@ export class UserInfoComponent implements OnInit {
     host: string = environment.host;
     logged: boolean = false;
 
-    constructor(private storageService:StorageService, private router:Router) {}
+    constructor(private storageService:StorageService, private router:Router, private toastrService:ToastrService) {}
 
     ngOnInit() :void {
         if(this.storageService.getLogin() == this.user.login){
@@ -26,6 +27,7 @@ export class UserInfoComponent implements OnInit {
 
     logout(){
         this.storageService.logout();
+        this.toastrService.success('You have been logged out');
         this.router.navigate(['/home']);
     }
 

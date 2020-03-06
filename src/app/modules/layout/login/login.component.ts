@@ -37,6 +37,7 @@ export class LogInComponent implements OnInit {
                 this.storageService.setLogin(data.login);
                 this.storageService.setUserId(data.userid);
                 this.storageService.setToken(data.token);
+                this.toastrService.success(`Welcome ${this.login} !`);
                 this.router.navigate(['/user', this.storageService.getLogin()]);
             }, error => {
                 this.toastrService.error('Wrong login or password', 'Error');

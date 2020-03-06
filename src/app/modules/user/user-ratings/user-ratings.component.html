@@ -1,5 +1,5 @@
 <article>
-    <p class="sectionTitle">Recent Ratings</p>
+    <p class="sectionTitle"><a [routerLink]="['/user/' + login + '/ratings']" >Recent Ratings</a></p>
     <ng-container *ngIf="ratings && ratings.length > 0; else empty">
         <div class="ratingsContainer">
             <ng-container *ngFor="let elem of ratings">

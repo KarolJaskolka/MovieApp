@@ -3,6 +3,7 @@
 section {
     padding: 1em;
     border-bottom: 1px solid $textDark;
+    display: flex;
 }
 
 h3, h5, h6 {
@@ -20,4 +21,17 @@ h5, h6, a {
 
 aside {
     margin: 0px 16px;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+i {
+    font-size: 80px;
+    color: $lightTheme;
+    vertical-align: middle;
 }
