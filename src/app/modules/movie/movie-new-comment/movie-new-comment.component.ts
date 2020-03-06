@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { StorageService } from 'src/app/services/storage.service';
 import { CommentService } from 'src/app/services/comment.service';
 import { Comment } from 'src/app/models/comment';
@@ -15,9 +15,12 @@ export class MovieNewCommentComponent implements OnInit {
     logged: boolean = false;
     comment: Comment = {} as Comment;
     @Input() movieid: number;
+    @Output() addComment: EventEmitter<void>;
 
     constructor(private storageService:StorageService, private commentService:CommentService, 
-        private toastrService:ToastrService) {}
+        private toastrService:ToastrService) {
+            this.addComment = new EventEmitter<void>();
+        }
 
     ngOnInit(): void {
         this.comment.userid = +this.storageService.getUserId();
@@ -31,6 +34,7 @@ export class MovieNewCommentComponent implements OnInit {
         if(this.comment.title && this.comment.description){
             this.commentService.sendComment(this.comment).subscribe(data => {
                 this.toastrService.success('Comment has been sent', 'Done!');
+                this.addComment.emit();
             }, error => {
                 this.toastrService.success('Something went wrong :/', 'Error!')
             });
