@@ -6,4 +6,22 @@ import { Component } from "@angular/core";
     styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {}
+export class HeaderComponent {
+
+    hidden: boolean = true;
+
+    constructor() {}
+
+    changeHidden(){
+        this.hidden = !this.hidden;
+    }
+
+    setHidden(value: boolean){
+        this.hidden = value;
+    }
+
+    getStyle(){
+        return this.hidden ? 'hidden' : '';
+    }
+
+}

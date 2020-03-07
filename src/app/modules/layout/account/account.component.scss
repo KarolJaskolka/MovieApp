@@ -8,3 +8,23 @@ i {
 i:hover{
     color: #ffffff;  
 }
+
+a {
+    display: none;
+    color: $text;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+a:hover {
+    color: $textGray;
+}
+
+@media (max-width: 1000px){
+    i {
+        display: none;
+    }
+    a {
+        display: block;
+    }
+}

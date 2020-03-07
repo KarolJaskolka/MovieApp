@@ -4,6 +4,7 @@ import { UserService } from 'src/app/services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-sign-up',
@@ -18,7 +19,7 @@ export class SignUpComponent implements OnInit {
     registerError: boolean = false;
 
     constructor(private userService:UserService, private formBuilder: FormBuilder, 
-        private router:Router, private storageService:StorageService) {}
+        private router:Router, private toastrService:ToastrService) {}
 
     ngOnInit() {
         const emailPattern = '^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$';
@@ -39,10 +40,10 @@ export class SignUpComponent implements OnInit {
         event.preventDefault();
         this.getData();
         this.userService.register(this.newUser).subscribe(data => {
-            this.router.navigate(['/success'])
+            this.toastrService.success('Done!');
+            this.router.navigate(['/success']);
         }, error => {
             this.registerError = true;
-            console.log(error);
         });
     }
 

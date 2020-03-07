@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SuccessComponent } from './success/success.component';
+import { BurgerComponent } from './burger/burger.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { SuccessComponent } from './success/success.component';
         LogInComponent,
         SignUpComponent,
         HomeMovieComponent,
-        SuccessComponent
+        SuccessComponent,
+        BurgerComponent
     ],
     imports: [
         RouterModule,
@@ -48,7 +50,8 @@ import { SuccessComponent } from './success/success.component';
         LogInComponent,
         SignUpComponent,
         HomeMovieComponent,
-        SuccessComponent
+        SuccessComponent,
+        BurgerComponent
     ],
     providers: [],
     bootstrap: []
