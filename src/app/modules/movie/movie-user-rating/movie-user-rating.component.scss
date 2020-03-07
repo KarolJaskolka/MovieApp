@@ -36,3 +36,12 @@ i {
 .hidden {
     display: none;
 }
+
+p {
+    position: relative;
+}
+
+input {
+    position: absolute;
+    top: 3px;
+}

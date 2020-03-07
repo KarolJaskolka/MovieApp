@@ -1,3 +1,5 @@
+@import '../../../../styles.scss';
+
 p {
     padding: 1em;
     text-align: center;
@@ -7,4 +9,33 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+i {
+    margin: auto 0em;
+    cursor: pointer;
+    color: $red;
+    padding: 0.25em 0em;
+}
+
+i:hover {
+    animation: shake 0.5s;
+}
+  
+@keyframes shake {
+    10% {
+      transform: translate(1px, 0);
+    }
+    
+    30% {
+        transform: translate(3px, 0);
+    }
+
+    70% {
+        transform: translate(-3px, 0);
+    }
+      
+    90% {
+        transform: translate(-1px, 0);
+    }
 }

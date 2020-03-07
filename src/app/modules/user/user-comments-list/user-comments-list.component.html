@@ -4,7 +4,7 @@
         <ng-container *ngFor="let elem of comments">
             <app-user-comment [comment]="elem">
                 <ng-container *ngIf="logged">
-                    <i (click)="delete(elem)" class="material-icons">delete</i>
+                    <i (click)="delete(elem)" class="material-icons">delete_forever</i>
                 </ng-container>
             </app-user-comment>
         </ng-container>

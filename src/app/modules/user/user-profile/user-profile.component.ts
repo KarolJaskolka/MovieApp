@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 
@@ -14,7 +14,9 @@ export class UserProfileComponent implements OnInit {
     login: string;
     user: User;
 
-    constructor(private service:UserService, private route:ActivatedRoute) {}
+    constructor(private router:Router, private service:UserService, private route:ActivatedRoute) {
+        this.router.routeReuseStrategy.shouldReuseRoute = () => { return false; }
+    }
 
     ngOnInit(): void {
         this.route.params.subscribe(params => {

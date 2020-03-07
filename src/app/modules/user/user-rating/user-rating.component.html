@@ -1,17 +1,18 @@
 <section>
-    <a [routerLink]="['/movie', rating.movie.name]">
-        <figure>
+    <figure>
+        <a [routerLink]="['/movie', rating.movie.name]">
             <ng-container *ngIf="rating.movie.poster; else default">
                 <img src="{{host}}{{rating.movie.poster}}">
             </ng-container>
             <ng-template #default>
                 <img src="../../../../assets/img/poster.png">
             </ng-template>
-            <figcaption>
-                <p class="stars">{{ rating.stars }}<i class="material-icons">grade</i></p>
-                <h6>{{ rating.date | date:'MMM d, y, H:mm' }}</h6>
-                <h5><a [routerLink]="['/movie/', rating.movie.name]">{{ rating.movie.title }}</a></h5>
-            </figcaption>
-        </figure>
-    </a>
+        </a>
+        <figcaption>
+            <p class="stars">{{ rating.stars }}<i class="material-icons">grade</i></p>
+            <h6>{{ rating.date | date:'MMM d, y, H:mm' }}</h6>
+            <h5><a [routerLink]="['/movie/', rating.movie.name]">{{ rating.movie.title }}</a></h5>
+            <ng-content></ng-content>
+        </figcaption>
+    </figure>
 </section>

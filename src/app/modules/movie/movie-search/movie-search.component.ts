@@ -24,7 +24,6 @@ export class MovieSearchComponent implements OnInit {
         })
         this.movieService.getMoviesByTitle(this.title, 'rating', 10, 0).subscribe(data => {
             this.movies = data;
-            console.log(this.movies);
         }) 
     }
 
