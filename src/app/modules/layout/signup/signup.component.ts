@@ -24,6 +24,7 @@ export class SignUpComponent implements OnInit {
     ngOnInit() {
         const emailPattern = '^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$';
         const passwordPattern = '^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,40}$';
+        const datePattern = '^[1-2][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$';
 
         this.signUpForm = this.formBuilder.group({
             login: [null, Validators.required],
@@ -32,7 +33,7 @@ export class SignUpComponent implements OnInit {
             lastName: [null, Validators.required],
             email: [null, [Validators.required, Validators.pattern(emailPattern)]],
             phone: [null],
-            birth: [null, Validators.required]
+            birth: [null, [Validators.required, Validators.pattern(datePattern)]]
         });
     }
 

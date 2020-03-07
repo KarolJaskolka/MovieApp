@@ -24,9 +24,10 @@
         <span class="invalid" *ngIf="signUpForm.get('email').errors.pattern">E-mail is not valid</span>
     </div>
     <input formControlName="phone" type="text" name="phone" placeholder="Phone">
-    <input formControlName="birth" type="text" name="birth" placeholder="Birth*">
+    <input formControlName="birth" type="text" name="birth" placeholder="Birth (yyyy-mm-dd) *">
     <div *ngIf="signUpForm.get('birth').invalid && signUpForm.get('birth').touched">
         <span class="invalid" *ngIf="signUpForm.get('birth').errors.required">Birth date is required</span>
+        <span class="invalid" *ngIf="signUpForm.get('birth').errors.pattern">Birth date is not valid</span>
     </div>
     <input (click)="signUp($event)" [disabled]="signUpForm.invalid" type="submit" name="btnSubmit" id="btnSubmit" value="Sign Up">
     <ng-container *ngIf="registerError">

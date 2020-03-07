@@ -24,12 +24,12 @@ export class UserRatingsListComponent implements OnInit {
         private toastrService:ToastrService) {}
 
     ngOnInit(): void {
-        if(this.storageService.getLogin()){
-            this.logged = true;
-        }
         this.route.params.subscribe(params => {
             this.login = params.login;
         })
+        if(this.storageService.getLogin() == this.login){
+            this.logged = true;
+        }
         this.getData();
     }
 
