@@ -20,6 +20,10 @@ export class StorageService {
         localStorage.setItem('token', token);
     }
 
+    setRefreshToken(token: string){
+        localStorage.setItem('refreshToken', token);
+    }
+
     getLogin(){
         return localStorage.getItem('login');
     }
@@ -32,8 +36,13 @@ export class StorageService {
         return localStorage.getItem('token');
     }
 
+    getRefreshToken(){
+        return localStorage.getItem('refreshToken');
+    }
+
     logout(){
         localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
         localStorage.removeItem('login');
         localStorage.removeItem('userId');
     }

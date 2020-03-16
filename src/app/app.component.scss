@@ -10,7 +10,7 @@ app-header, app-search, app-footer, main{
 }
 
 main {
-    min-height: calc(100vh - 229.2px);
+    min-height: calc(100vh - 230.8px);
     background-color: $mainBackground;
     padding: 16px;
 }
@@ -23,4 +23,9 @@ main {
     app-header, app-search, app-footer, main{
         grid-column: 1/2;
     }
+
+    main {
+        min-height: calc(100vh - 221.2px);
+    }
+
 }
