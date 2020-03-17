@@ -3,16 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserCommentsListComponent } from './user-comments-list/user-comments-list.component';
 import { UserRatingsListComponent } from './user-ratings-list/user-ratings-list.component';
+import { UserGuard } from 'src/app/guards/user.guard';
 
 const routes:Routes = [
-    { path: 'user/:login', component: UserProfileComponent },
-    { path: 'user/:login/comments', component: UserCommentsListComponent},
-    { path: 'user/:login/ratings', component: UserRatingsListComponent}
+    { path: 'user/:login', component: UserProfileComponent, canActivate: [UserGuard] },
+    { path: 'user/:login/comments', component: UserCommentsListComponent, canActivate: [UserGuard] },
+    { path: 'user/:login/ratings', component: UserRatingsListComponent, canActivate: [UserGuard] }
 ]
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [UserGuard]
 })
 
 export class UserRoutingModule {}
