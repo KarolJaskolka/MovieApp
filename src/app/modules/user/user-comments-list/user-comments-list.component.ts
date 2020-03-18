@@ -40,7 +40,7 @@ export class UserCommentsListComponent implements OnInit {
             this.comments = this.comments.filter(e => e.commentid != comment.commentid);
             this.toastrService.success('Comment has been removed', 'Done!');
         }, error => {
-            this.toastrService.success('Something went wrong :/', 'Error!');
+            this.toastrService.error('Something went wrong :/', 'Error!');
         })
     }
 

@@ -14,8 +14,8 @@ export class TokenService {
 
     constructor(private http:HttpClient) {}
 
-    refreshToken(token: string): Observable<Log> {
-        return this.http.post<Log>(this.host + '/api/tokens', {token: token});
+    refreshToken(token: string, login: string): Observable<Log> {
+        return this.http.post<Log>(this.host + 'api/auth/token', {refreshToken: token, login: login});
     }
 
 }

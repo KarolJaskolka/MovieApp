@@ -8,12 +8,14 @@ import { HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { HttpHandler, HttpRequest } from '@angular/common/http'
 
 import 'rxjs/add/operator/do';
+import { catchError } from 'rxjs/operators/catchError'; 
+import { Router } from '@angular/router';
 
 @Injectable()
 
 export class AppInterceptor implements HttpInterceptor {
 
-  constructor(private tokenService:TokenService, private storageService:StorageService) {}
+  constructor(private tokenService:TokenService, private storageService:StorageService, private router:Router) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {   
     return next.handle(req)                
@@ -23,15 +25,19 @@ export class AppInterceptor implements HttpInterceptor {
 
   handleError(req: HttpRequest<any>, error, next: HttpHandler) { 
     if (error.status === 401) {
-      const token = this.storageService.getToken();
-      this.tokenService.refreshToken(token).subscribe(data => {
-        this.storageService.setToken(data.token);
-        this.storageService.setRefreshToken(data.refreshToken);
-        return next.handle(req); 
+      const token = this.storageService.getRefreshToken();
+      const login = this.storageService.getLogin();
+      return this.tokenService.refreshToken(token, login).subscribe(data => {
+        this.storageService.setToken(data.token); // it works
+        return next.handle(req.clone({ // does nothing why ??? I don't get it :/
+          headers: req.headers.set('Authorization', 'Bearer ' + data.token)
+        }))
+      }, err => {
+        this.router.navigate(['/form/login']);
+        console.log(err);
       })
     } else {
       console.log(error);
     }
   }
-
 }
