@@ -36,7 +36,7 @@ export class MovieNewCommentComponent implements OnInit {
                 this.toastrService.success('Comment has been sent', 'Done!');
                 this.addComment.emit();
             }, error => {
-                this.toastrService.success('Something went wrong :/', 'Error!')
+                this.toastrService.error('Something went wrong :/', 'Error!')
             });
             this.comment.title = '';
             this.comment.description = '';
