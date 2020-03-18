@@ -8,7 +8,6 @@ import { HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { HttpHandler, HttpRequest } from '@angular/common/http'
 
 import 'rxjs/add/operator/do';
-import { catchError } from 'rxjs/operators/catchError'; 
 import { Router } from '@angular/router';
 
 @Injectable()
