@@ -27,17 +27,21 @@ export class UserCommentsListComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.login = params.login;
         })
-        this.userService.getUserComments(this.login, 25, this.offset).subscribe(data => {
-            this.comments = data;
-        })
+        this.getData();
         if(this.login == this.storageService.getLogin()){
             this.logged = true;
         }
     }
 
+    getData(){
+        this.userService.getUserComments(this.login, 25, this.offset).subscribe(data => {
+            this.comments = data;
+        })
+    }
+
     delete(comment:Comment){
         this.commentService.removeComment(comment.commentid).subscribe(() => {
-            this.comments = this.comments.filter(e => e.commentid != comment.commentid);
+            this.getData();
             this.toastrService.success('Comment has been removed', 'Done!');
         }, error => {
             this.toastrService.error('Something went wrong :/', 'Error!');
