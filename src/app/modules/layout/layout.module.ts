@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SuccessComponent } from './success/success.component';
 import { BurgerComponent } from './burger/burger.component';
+import { LayoutRoutingModule } from './layout-routing.module';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { BurgerComponent } from './burger/burger.component';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule
+        RouterModule,
+        LayoutRoutingModule
     ],
     exports: [
         HomeComponent,

@@ -14,6 +14,7 @@ import { MovieNewCommentComponent } from './movie-new-comment/movie-new-comment.
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MovieRoutingModule } from './movie-routing.module';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     imports: [
         RouterModule,
         CommonModule,
-        FormsModule
+        FormsModule,
+        MovieRoutingModule
     ],
     exports: [
         MovieMainComponent,

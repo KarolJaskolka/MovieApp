@@ -6,9 +6,9 @@ import { UserRatingsListComponent } from './user-ratings-list/user-ratings-list.
 import { UserGuard } from 'src/app/guards/user.guard';
 
 const routes:Routes = [
-    { path: 'user/:login', component: UserProfileComponent, canActivate: [UserGuard] },
-    { path: 'user/:login/comments', component: UserCommentsListComponent, canActivate: [UserGuard] },
-    { path: 'user/:login/ratings', component: UserRatingsListComponent, canActivate: [UserGuard] }
+    { path: ':login', component: UserProfileComponent, canActivate: [UserGuard] },
+    { path: ':login/comments', component: UserCommentsListComponent, canActivate: [UserGuard] },
+    { path: ':login/ratings', component: UserRatingsListComponent, canActivate: [UserGuard] }
 ]
 
 @NgModule({

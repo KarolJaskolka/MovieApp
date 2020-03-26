@@ -3,7 +3,6 @@ import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StorageService } from 'src/app/services/storage.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -42,7 +41,7 @@ export class SignUpComponent implements OnInit {
         this.getData();
         this.userService.register(this.newUser).subscribe(data => {
             this.toastrService.success('Done!');
-            this.router.navigate(['/success']);
+            this.router.navigate(['/form/success']);
         }, error => {
             this.registerError = true;
         });

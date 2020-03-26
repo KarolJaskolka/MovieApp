@@ -1,7 +1,7 @@
 <header>
     <app-logo (click)="setHidden(true)" ></app-logo>
     <section [ngClass]="getStyle()">
-        <a (click)="setHidden(true)" routerLink="/ranking">Ranking</a>
+        <a (click)="setHidden(true)" routerLink="/movie/ranking">Ranking</a>
     </section>
     <app-account (click)="setHidden(true)" [ngClass]="getStyle()"></app-account>
     <app-burger (toggle)="changeHidden()"></app-burger>
