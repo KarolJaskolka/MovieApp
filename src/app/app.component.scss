@@ -2,17 +2,25 @@
 
 .wrapper{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
 }
 
 app-header, app-search, app-footer, main{
-    grid-column: 2/6;
+    grid-column: 2/7;
 }
 
 main {
     min-height: calc(100vh - 230.8px);
     background-color: $mainBackground;
     padding: 16px;
+}
+
+@media (max-width: 1260px){
+
+    app-header, app-search, app-footer, main{
+        grid-column: 1/8;
+    }
+
 }
 
 @media (max-width: 1000px){
