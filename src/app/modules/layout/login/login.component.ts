@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -12,12 +13,14 @@ import { ToastrService } from 'ngx-toastr';
     styleUrls: ['./login.component.scss']
 })
 
-export class LogInComponent implements OnInit {
+export class LogInComponent implements OnInit, OnDestroy {
 
     login: string;
     password: string;
     warningStyle: string = 'none';
     logInForm: FormGroup;
+
+    authSubscription: Subscription;
 
     constructor(private authService:AuthService, private storageService:StorageService, 
         private router:Router,private formBuilder:FormBuilder, private toastrService:ToastrService) {}
@@ -32,7 +35,7 @@ export class LogInComponent implements OnInit {
     logIn(event){
         event.preventDefault();
         this.getData();
-        this.authService.login(this.login,this.password).subscribe(
+        this.authSubscription = this.authService.login(this.login,this.password).subscribe(
             data => {
                 this.storageService.setLogin(data.login);
                 this.storageService.setUserId(data.userid);
@@ -49,6 +52,10 @@ export class LogInComponent implements OnInit {
     getData() {
         this.login = this.logInForm.get('login').value;
         this.password = this.logInForm.get('password').value;
+    }
+
+    ngOnDestroy() {
+        if(this.authSubscription) this.authSubscription.unsubscribe();
     }
 
 }

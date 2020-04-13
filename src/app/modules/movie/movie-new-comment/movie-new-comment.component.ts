@@ -1,8 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from "@angular/core";
 import { StorageService } from 'src/app/services/storage.service';
 import { CommentService } from 'src/app/services/comment.service';
 import { Comment } from 'src/app/models/comment';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-movie-new-comment',
@@ -10,10 +11,11 @@ import { ToastrService } from 'ngx-toastr';
     styleUrls: ['./movie-new-comment.component.scss']
 })
 
-export class MovieNewCommentComponent implements OnInit {
+export class MovieNewCommentComponent implements OnInit, OnDestroy {
 
     logged: boolean = false;
     comment: Comment = {} as Comment;
+    commentSubscription: Subscription;
     @Input() movieid: number;
     @Output() addComment: EventEmitter<void>;
 
@@ -32,7 +34,7 @@ export class MovieNewCommentComponent implements OnInit {
 
     send() {
         if(this.comment.title && this.comment.description){
-            this.commentService.sendComment(this.comment).subscribe(data => {
+            this.commentSubscription = this.commentService.sendComment(this.comment).subscribe(data => {
                 this.toastrService.success('Comment has been sent', 'Done!');
                 this.addComment.emit();
             }, error => {
@@ -41,6 +43,10 @@ export class MovieNewCommentComponent implements OnInit {
             this.comment.title = '';
             this.comment.description = '';
         }
+    }
+
+    ngOnDestroy(){
+        if(this.commentSubscription) this.commentSubscription.unsubscribe();
     }
 
 }

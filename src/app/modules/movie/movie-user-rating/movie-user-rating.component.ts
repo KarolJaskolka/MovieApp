@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, OnDestroy } from "@angular/core";
 import { UserService } from 'src/app/services/user.service';
 import { Rating } from 'src/app/models/rating';
 import { RatingService } from 'src/app/services/rating.service';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-movie-user-rating',
@@ -10,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
     styleUrls: ['./movie-user-rating.component.scss']
 })
 
-export class MovieUserRatingComponent implements OnInit {
+export class MovieUserRatingComponent implements OnInit, OnDestroy {
     
     @Input() movieid: number;
     @Input() userid: number;
@@ -19,12 +20,15 @@ export class MovieUserRatingComponent implements OnInit {
     stars: Array<number> = new Array(10);
     new: boolean;
     hidden: boolean = true;
+    ratingNewSubscription: Subscription;
+    ratingUpdateSubscription: Subscription;
+    userSubscription: Subscription;
 
     constructor(private userService: UserService, private ratingService:RatingService, 
         private toastrService:ToastrService) {}
 
     ngOnInit(): void {
-        this.userService.getUserRatingByMovie(this.userid, this.movieid).subscribe(data => {
+        this.userSubscription = this.userService.getUserRatingByMovie(this.userid, this.movieid).subscribe(data => {
             if(data){
                 this.rating = data;
                 this.stars = this.stars.fill(1,0,this.rating.stars);
@@ -52,7 +56,7 @@ export class MovieUserRatingComponent implements OnInit {
     sendRating(){
         this.hidden = true;
         if(this.new){
-            this.ratingService.sendRating(this.rating).subscribe(data => {
+            this.ratingNewSubscription = this.ratingService.sendRating(this.rating).subscribe(data => {
                 this.toastrService.success('Your rating has been saved', 'Done!');
                 this.new = false;
             }, error => {
@@ -60,7 +64,7 @@ export class MovieUserRatingComponent implements OnInit {
             });
         }
         else{
-            this.ratingService.updateRating(this.rating).subscribe(data => {
+            this.ratingUpdateSubscription = this.ratingService.updateRating(this.rating).subscribe(data => {
                 this.toastrService.success('Your rating has been saved', 'Done!');
             }, error => {
                 this.toastrService.error('Something went wrong :/', 'Error');
@@ -70,6 +74,12 @@ export class MovieUserRatingComponent implements OnInit {
 
     getButtonClass() {
         return this.hidden ? 'hidden' : 'btnSave';
+    }
+
+    ngOnDestroy(){
+        if(this.ratingNewSubscription) this.ratingNewSubscription.unsubscribe();
+        if(this.ratingUpdateSubscription) this.ratingUpdateSubscription.unsubscribe();
+        this.userSubscription.unsubscribe();
     }
 
 }

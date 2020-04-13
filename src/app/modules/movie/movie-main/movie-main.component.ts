@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { MovieService } from 'src/app/services/movie.service';
 import { Movie } from 'src/app/models/movie';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-movie',
@@ -10,27 +11,34 @@ import { StorageService } from 'src/app/services/storage.service';
     styleUrls: ['./movie-main.component.scss']
 })
 
-export class MovieMainComponent implements OnInit {
+export class MovieMainComponent implements OnInit, OnDestroy {
     
     movie: Movie;
     name: string;
     logged: boolean = false;
     userid: number;
+    routeSubscription: Subscription;
+    movieSubscription: Subscription;
 
     constructor(private route:ActivatedRoute, private movieService:MovieService,
         private storageService:StorageService) {}
 
     ngOnInit(): void {
-        this.route.params.subscribe(params => {
+        this.routeSubscription = this.route.params.subscribe(params => {
             this.name = params.name;
         })
-        this.movieService.getMovie(this.name).subscribe(data => {
+        this.movieSubscription = this.movieService.getMovie(this.name).subscribe(data => {
             this.movie = data;
         })
         this.userid = +this.storageService.getUserId()
         if(this.userid){
             this.logged = true;
         }
+    }
+
+    ngOnDestroy(){
+        this.movieSubscription.unsubscribe();
+        this.routeSubscription.unsubscribe();
     }
 
 }

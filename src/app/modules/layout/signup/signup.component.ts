@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-sign-up',
@@ -11,11 +12,12 @@ import { ToastrService } from 'ngx-toastr';
     styleUrls: ['./signup.component.scss']
 })
 
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, OnDestroy {
 
     newUser: User = {} as User;
     signUpForm: FormGroup;
     registerError: boolean = false;
+    userSubscription: Subscription;
 
     constructor(private userService:UserService, private formBuilder: FormBuilder, 
         private router:Router, private toastrService:ToastrService) {}
@@ -39,7 +41,7 @@ export class SignUpComponent implements OnInit {
     signUp(event){
         event.preventDefault();
         this.getData();
-        this.userService.register(this.newUser).subscribe(data => {
+        this.userSubscription = this.userService.register(this.newUser).subscribe(data => {
             this.toastrService.success('Done!');
             this.router.navigate(['/form/success']);
         }, error => {
@@ -55,6 +57,10 @@ export class SignUpComponent implements OnInit {
         this.newUser.email = this.signUpForm.get('email').value;
         this.newUser.phone = this.signUpForm.get('phone').value;
         this.newUser.birth = this.signUpForm.get('birth').value;
+    }
+
+    ngOnDestroy(){
+        if(this.userSubscription) this.userSubscription.unsubscribe();
     }
 
 }
