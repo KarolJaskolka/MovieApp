@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { User } from 'src/app/models/user';
-import { UserService } from 'src/app/services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
     selector: 'app-sign-up',
@@ -19,7 +19,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
     registerError: boolean = false;
     userSubscription: Subscription;
 
-    constructor(private userService:UserService, private formBuilder: FormBuilder, 
+    constructor(private authService:AuthService, private formBuilder: FormBuilder, 
         private router:Router, private toastrService:ToastrService) {}
 
     ngOnInit() {
@@ -41,7 +41,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
     signUp(event){
         event.preventDefault();
         this.getData();
-        this.userSubscription = this.userService.register(this.newUser).subscribe(data => {
+        this.userSubscription = this.authService.register(this.newUser).subscribe(data => {
             this.toastrService.success('Done!');
             this.router.navigate(['/form/success']);
         }, error => {
