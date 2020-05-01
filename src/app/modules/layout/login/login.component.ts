@@ -37,8 +37,6 @@ export class LogInComponent implements OnInit, OnDestroy {
         this.getData();
         this.authSubscription = this.authService.login(this.login,this.password).subscribe(
             data => {
-                this.storageService.setLogin(data.login);
-                this.storageService.setUserId(data.userid);
                 this.storageService.setToken(data.token);
                 this.storageService.setRefreshToken(data.refreshToken);
                 this.toastrService.success(`Welcome ${this.login} !`);

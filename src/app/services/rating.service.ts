@@ -18,7 +18,6 @@ export class RatingService {
 
     sendRating(rating: Rating):Observable<any>{
         return this.http.post(this.host + 'api/ratings', {
-            userid: rating.userid,
             movieid: rating.movieid,
             stars: rating.stars
         }, {

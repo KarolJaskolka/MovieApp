@@ -25,9 +25,8 @@ export class MovieNewCommentComponent implements OnInit, OnDestroy {
         }
 
     ngOnInit(): void {
-        this.comment.userid = +this.storageService.getUserId();
         this.comment.movieid = this.movieid;
-        if(this.comment.userid){
+        if(+this.storageService.getUserId()){
             this.logged = true;
         }
     }

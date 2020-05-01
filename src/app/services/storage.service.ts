@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-
+import * as jwt_decode from "jwt-decode";
 @Injectable({
     providedIn: 'root'
 })
@@ -8,28 +8,12 @@ export class StorageService {
 
     constructor() {}
 
-    setLogin(login: string){
-        localStorage.setItem('login', login);
-    }
-
-    setUserId(userId: string){
-        localStorage.setItem('userId', userId);
-    }
-
     setToken(token: string){
         localStorage.setItem('token', token);
     }
 
     setRefreshToken(token: string){
         localStorage.setItem('refreshToken', token);
-    }
-
-    getLogin(){
-        return localStorage.getItem('login');
-    }
-
-    getUserId(){
-        return localStorage.getItem('userId');
     }
 
     getToken(){
@@ -40,11 +24,28 @@ export class StorageService {
         return localStorage.getItem('refreshToken');
     }
 
+    getLogin(){
+        const token = this.getToken();
+        return token ? this.getDecodedAccessToken(token).login : null;
+    }
+
+    getUserId(){
+        const token = this.getToken();
+        return  token ? this.getDecodedAccessToken(token).userid : null;
+    }
+
     logout(){
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
-        localStorage.removeItem('login');
-        localStorage.removeItem('userId');
     }
+
+    getDecodedAccessToken(token: string): any {
+        try{
+            return jwt_decode(token);
+        }
+        catch(Error){
+            return null;
+        }
+      }
 
 }

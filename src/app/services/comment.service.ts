@@ -17,7 +17,6 @@ export class CommentService {
 
     sendComment(comment: Comment):Observable<any>{
         return this.http.post(this.host + 'api/comments', {
-            userid: comment.userid,
             movieid: comment.movieid,
             title: comment.title,
             description: comment.description
