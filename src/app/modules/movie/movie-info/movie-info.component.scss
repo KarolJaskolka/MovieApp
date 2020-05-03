@@ -28,6 +28,11 @@ img {
     transition: 0.5s;
 }
 
+.poster-box{
+    height: 250px;
+    width: 185px;
+}
+
 img:hover {
     transform: scale(1.1);
 }

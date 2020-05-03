@@ -29,6 +29,11 @@ img {
     vertical-align: middle;
 }
 
+.poster-box{
+    height: 175px;
+    width: 125px;
+}
+
 .movie {
     padding: 1em;
     margin: auto 0em;
@@ -88,6 +93,11 @@ i {
     }
 
     img {
+        height: 125px;
+        width: 75px;
+    }
+
+    .poster-box{
         height: 125px;
         width: 75px;
     }

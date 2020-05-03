@@ -8,7 +8,6 @@ img {
 span {
     display: block;
     text-align: center;
-    
 }
 
 .rating {
@@ -30,8 +29,17 @@ i {
     line-height: 16px;
 }
 
+.poster-box{
+    height: 300px;
+}
+
 @media( max-width: 1000px){
     img {
         height: 200px;
     }
+
+    .poster-box{
+        height: 200px;
+    }
+
 }

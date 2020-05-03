@@ -57,3 +57,17 @@ img {
     font-size: 12px;
     display: block;
 }
+
+.poster-box{
+    width: 100%;
+    background-color: $textGray;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster-box i {
+    color: $text;
+    font-size: 80px;
+    margin: 0;
+}

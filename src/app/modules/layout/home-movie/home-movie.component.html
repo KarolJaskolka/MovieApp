@@ -4,7 +4,9 @@
             <img src="{{host}}{{movie.poster}}">
         </ng-container>
         <ng-template #default>
-            <img src="../../../../assets/img/poster.png">
+            <div class="poster-box">
+                <i class="material-icons">theaters</i>
+            </div>
         </ng-template>
         <figcaption>
             <span class="rating">{{movie.rating}}<i class="material-icons">grade</i></span>
