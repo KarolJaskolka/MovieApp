@@ -1,1 +1,11 @@
 @import '../../../../styles.scss';
+
+app-movie-rating-floating-button{
+    display: none;
+}
+
+@media (max-width:768px) {
+    app-movie-rating-floating-button{
+        display: block;
+    }
+}

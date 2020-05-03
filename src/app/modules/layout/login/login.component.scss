@@ -7,7 +7,12 @@ form {
 
 input {
     display: block;
+    margin-top: 1em;
     margin-bottom: 1em;
+}
+
+input:not(:first-child){
+    margin-top: 2em;
 }
 
 input[type=text], input[type=password]{
@@ -26,12 +31,16 @@ input[type=text]:focus, input[type=password]:focus{
 }
 
 input[type=submit]{
-    margin: 10px auto 0px auto;
+    margin: 3em auto 0px auto;
     padding: 0.75em;
     background-color: $orange;
     -webkit-appearance: none;
     border: 0px;
     border-radius: 5px;
+}
+
+input[type=submit]:valid:hover{
+    cursor: pointer;
 }
 
 form.ng-valid input[type=submit]:hover{

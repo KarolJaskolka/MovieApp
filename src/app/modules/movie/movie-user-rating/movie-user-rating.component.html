@@ -1,6 +1,6 @@
 <section>
     <p *ngIf="rating">
-        Your Rating :
+        Your rating:
         <ng-container *ngFor="let elem of stars; index as i">
             <!-- elem 0 or 1-->
             <ng-container *ngIf="elem; else dark">
@@ -10,6 +10,6 @@
                 <i (click)="setRating(i+1)" class="material-icons starBlur">grade</i>
             </ng-template>  
         </ng-container>
-        <input type="submit" (click)="sendRating()" [ngClass]="getButtonClass()" value="Save">
+        <input type="submit" (click)="sendRating()" [ngClass]="getButtonClass()" value="SAVE">
     </p>
 </section>

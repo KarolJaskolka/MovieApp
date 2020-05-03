@@ -12,8 +12,7 @@ input[type=text], textarea {
     margin: 0em auto 1em auto;
     border-radius: 5px;
     border: 1px solid $textGray;
-    width: 60%;
-    
+    width: 75%;
 }
 
 textarea {
@@ -37,4 +36,14 @@ button:disabled {
 p {
     padding: 1em;
     text-align: center;
+}
+
+@media (max-width: 1000px){
+    input[type=text], textarea {
+        width: 100%;
+    }
+
+    textarea {
+        height: 100px;
+    }
 }
