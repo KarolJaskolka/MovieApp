@@ -10,6 +10,7 @@ import { MovieViewComponent } from './movie-view/movie-view.component';
 import { MovieRankingComponent } from './movie-ranking/movie-ranking.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { MovieNewCommentComponent } from './movie-new-comment/movie-new-comment.component';
+import { MovieRatingFloatingButtonComponent } from './movie-rating-floating-button/movie-rating-floating-button.component';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,8 @@ import { MovieRoutingModule } from './movie-routing.module';
         MovieViewComponent,
         MovieRankingComponent,
         MovieSearchComponent,
-        MovieNewCommentComponent
+        MovieNewCommentComponent,
+        MovieRatingFloatingButtonComponent
     ],
     imports: [
         RouterModule,
