@@ -7,7 +7,7 @@ section {
     right: 0;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    background-color: $textGray;
+    background-color: $theme;
 }
 
 .banner {
@@ -15,6 +15,8 @@ section {
     padding: 1em;
     display: flex;
     text-align: justify;
+    align-items: center;
+    color: $text;
 }
 
 .btnAccept {
@@ -25,6 +27,7 @@ section {
     border: 0;
     border-radius: 8px;
     transition: 0.4s;
+    max-height: 50px;
 }
 
 .btnAccept:hover {

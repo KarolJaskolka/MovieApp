@@ -2,17 +2,19 @@
 
 section {
     padding: 15px 0px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 262.8px);
 }
 
 .forms {
-    grid-column: 2/3;
     color: $textDark;
     background-color: $form;
     -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.75);
+    min-width: 400px;
 }
 
 .buttons {
@@ -37,25 +39,10 @@ section {
     background-color: #da7735;
 }
 
-
-@media(max-width: 1000px){
-
-    section {
-        grid-template-columns: repeat(5,1fr);
-    }
-
-    .forms {
-        grid-column: 2/5;
-    }
-}
-
 @media(max-width: 768px){
 
-    section {
-        grid-template-columns: repeat(1,1fr);
+    .forms {
+        width: 90%;
     }
 
-    .forms {
-        grid-column: 1/2;
-    }
 }
