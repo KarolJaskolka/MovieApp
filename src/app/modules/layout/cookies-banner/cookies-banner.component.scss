@@ -1,0 +1,53 @@
+@import '../../../../styles.scss';
+
+section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: $textGray;
+}
+
+.banner {
+    grid-column: 2/7;
+    padding: 1em;
+    display: flex;
+    text-align: justify;
+}
+
+.btnAccept {
+    margin: 1em;
+    padding: 1em;
+    background-color: $textDark;
+    color: $text;
+    border: 0;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+.btnAccept:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+p {
+    margin: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1260px){
+
+    section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .banner {
+        grid-column: 1/2;
+    }
+
+}

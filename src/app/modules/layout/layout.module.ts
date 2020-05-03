@@ -10,6 +10,7 @@ import { LogoComponent } from './logo/logo.component';
 import { LogInComponent } from './login/login.component';
 import { SignUpComponent } from './signup/signup.component';
 import { HomeMovieComponent } from './home-movie/home-movie.component';
+import { CookiesBannerComponent } from './cookies-banner/cookies-banner.component';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -31,7 +32,8 @@ import { LayoutRoutingModule } from './layout-routing.module';
         SignUpComponent,
         HomeMovieComponent,
         SuccessComponent,
-        BurgerComponent
+        BurgerComponent,
+        CookiesBannerComponent
     ],
     imports: [
         RouterModule,
@@ -53,7 +55,8 @@ import { LayoutRoutingModule } from './layout-routing.module';
         SignUpComponent,
         HomeMovieComponent,
         SuccessComponent,
-        BurgerComponent
+        BurgerComponent,
+        CookiesBannerComponent
     ],
     providers: [],
     bootstrap: []
