@@ -10,25 +10,25 @@
             Password must contain small and large letter, number and be 6-40 characters
         </span>
     </div>
-    <input formControlName="firstName" type="text" name="firstName" placeholder="First Name*">
-    <div *ngIf="signUpForm.get('firstName').invalid && signUpForm.get('firstName').touched">
-        <span class="invalid" *ngIf="signUpForm.get('firstName').errors.required">First name is required</span>
+    <input formControlName="firstname" type="text" name="firstname" placeholder="First Name*">
+    <div *ngIf="signUpForm.get('firstname').invalid && signUpForm.get('firstname').touched">
+        <span class="invalid" *ngIf="signUpForm.get('firstname').errors.required">First name is required</span>
     </div>
-    <input formControlName="lastName" type="text" name="lastName" placeholder="Last Name*">
-    <div *ngIf="signUpForm.get('lastName').invalid && signUpForm.get('lastName').touched">
-        <span class="invalid" *ngIf="signUpForm.get('lastName').errors.required">Last name is required</span>
+    <input formControlName="lastname" type="text" name="lastname" placeholder="Last Name*">
+    <div *ngIf="signUpForm.get('lastname').invalid && signUpForm.get('lastname').touched">
+        <span class="invalid" *ngIf="signUpForm.get('lastname').errors.required">Last name is required</span>
     </div>
     <input formControlName="email" type="text" name="email" placeholder="E-Mail*">
     <div *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').touched">
         <span class="invalid" *ngIf="signUpForm.get('email').errors.required">E-mail is required</span>
         <span class="invalid" *ngIf="signUpForm.get('email').errors.pattern">E-mail is not valid</span>
     </div>
-    <input formControlName="phone" type="text" name="phone" placeholder="Phone">
+    <!--input formControlName="phone" type="text" name="phone" placeholder="Phone">
     <input formControlName="birth" type="text" name="birth" placeholder="Birth (yyyy-mm-dd) *">
     <div *ngIf="signUpForm.get('birth').invalid && signUpForm.get('birth').touched">
         <span class="invalid" *ngIf="signUpForm.get('birth').errors.required">Birth date is required</span>
         <span class="invalid" *ngIf="signUpForm.get('birth').errors.pattern">Birth date is not valid</span>
-    </div>
+    </div-->
     <input (click)="signUp($event)" [disabled]="signUpForm.invalid" type="submit" name="btnSubmit" id="btnSubmit" value="Sign Up">
     <ng-container *ngIf="registerError">
         <span class="registerError">Something went wrong :/</span>
