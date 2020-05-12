@@ -20,22 +20,32 @@ i {
     color: $textDark;
 }
 
-.btnSave {
-    margin-left: 5px;
-    background-color: $focus;
-    border-width: 0px;
-    border-radius: 2px;
-    padding: 2px 4px;
-    cursor: pointer;
+.starFocus:hover {
+    opacity: 0.5;
 }
 
-.btnSave:hover {
-    background-color: #8d813a;
+.starBlur:hover {
+    color: $focus;
+    opacity: 0.5;
 }
 
-.hidden {
-    display: none;
-}
+
+// .btnSave {
+//     margin-left: 5px;
+//     background-color: $lightTheme;
+//     border-width: 0px;
+//     border-radius: 2px;
+//     cursor: pointer;
+//     margin-bottom: 5px;
+// }
+
+// .btnSave:hover {
+//     color: $focus
+// }
+
+// .hidden {
+//     display: none;
+// }
 
 p {
     position: relative;
@@ -48,10 +58,6 @@ input {
 
 @media(max-width:768px){
     i {
-        font-size: 16px;
-    }
-
-    .btnSave {
-        font-size: 10px;
+        font-size: 20px;
     }
 }

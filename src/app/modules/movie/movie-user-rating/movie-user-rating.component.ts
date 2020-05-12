@@ -51,6 +51,7 @@ export class MovieUserRatingComponent implements OnInit, OnDestroy {
         this.rating.stars = index;
         this.stars = this.stars.fill(1,0,index);
         this.stars = this.stars.fill(0,index);
+        this.sendRating();
     }
 
     sendRating(){
@@ -72,9 +73,9 @@ export class MovieUserRatingComponent implements OnInit, OnDestroy {
         }
     }
 
-    getButtonClass() {
-        return this.hidden ? 'hidden' : 'btnSave';
-    }
+    // getButtonClass() {
+    //     return this.hidden ? 'hidden' : 'btnSave';
+    // }
 
     ngOnDestroy(){
         if(this.ratingNewSubscription) this.ratingNewSubscription.unsubscribe();
