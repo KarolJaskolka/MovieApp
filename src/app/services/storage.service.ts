@@ -37,6 +37,7 @@ export class StorageService {
     logout(){
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
+        localStorage.removeItem('cookies');
     }
 
     getDecodedAccessToken(token: string): any {
@@ -46,6 +47,14 @@ export class StorageService {
         catch(Error){
             return null;
         }
-      }
+    }
+
+    acceptCookies() {
+        localStorage.setItem('cookies', 'accepted');
+    }
+
+    getCookiesConsent() {
+        return localStorage.getItem('cookies');
+    }
 
 }

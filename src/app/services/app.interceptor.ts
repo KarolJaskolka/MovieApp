@@ -47,7 +47,10 @@ export class AppInterceptor implements HttpInterceptor {
         mergeMap(res => res)
       );
     } else {
-      this.router.navigate(['/form/login']);
+      if(error.status === 403){
+        this.router.navigate(['/form/login']);
+        return next.handle(req);
+      }
       return next.handle(req);
     }
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-cookies-banner',
@@ -9,9 +10,12 @@ export class CookiesBannerComponent implements OnInit {
 
   accepted: boolean = false;
 
-  constructor() { }
+  constructor(private storageService:StorageService) { }
 
   ngOnInit(): void {
+    if(this.storageService.getCookiesConsent() === 'accepted'){
+      this.accepted = true;
+    }
   }
 
   getClass(){
@@ -21,6 +25,7 @@ export class CookiesBannerComponent implements OnInit {
 
   accept(){
     this.accepted = true;
+    this.storageService.acceptCookies();
   }
 
 }
