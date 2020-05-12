@@ -42,7 +42,8 @@ section {
 @media(max-width: 768px){
 
     .forms {
-        width: 90%;
+        min-width: 0;
+        width: 95%;
     }
 
 }
