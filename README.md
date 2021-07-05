@@ -4,8 +4,6 @@ Frontend Movie Application which interact with to my own [MovieAPI](https://gith
 
 The idea of the project was to create website similar to imdb and filmweb.
 
-Application is available on [Heroku](https://movie-app-ng.herokuapp.com).
-
 ## CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
